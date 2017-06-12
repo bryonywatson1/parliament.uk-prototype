@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'people/current_constituency', vcr: true do
+RSpec.describe 'people/constituencies/current_constituency', vcr: true do
   before do
     assign(:person, double(:person, display_name: 'Test Name'))
   end

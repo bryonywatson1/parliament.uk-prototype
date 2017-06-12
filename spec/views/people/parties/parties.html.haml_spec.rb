@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'people/parties', vcr: true do
+RSpec.describe 'people/parties/parties', vcr: true do
   before do
     assign(:person, double(:person, display_name: 'Test Name'))
     assign(:party_memberships, [double(:party_membership,

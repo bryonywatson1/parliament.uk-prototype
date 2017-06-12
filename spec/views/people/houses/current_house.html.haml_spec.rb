@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'people/current_house', vcr: true do
+RSpec.describe 'people/houses/current_house', vcr: true do
   before do
     assign(:person, double(:person, display_name: 'Test Name'))
   end

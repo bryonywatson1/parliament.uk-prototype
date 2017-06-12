@@ -24,15 +24,15 @@ Rails.application.routes.draw do
       get '/', to: 'people#show', person_id: id_format_regex
 
       # /people/:person_id/constituencies
-      build_root_and_current_routes('people', 'constituencies')
+      build_root_and_current_routes('people/constituencies', 'constituencies')
 
       get '/contact-points', to: 'people#contact_points'
 
       # /people/:person_id/houses
-      build_root_and_current_routes('people', 'houses')
+      build_root_and_current_routes('people/houses', 'houses')
 
       # /people/:person_id/parties
-      build_root_and_current_routes('people', 'parties')
+      build_root_and_current_routes('people/parties', 'parties')
     end
 
     # Allow lookups - but ensure they are SECOND in the routes list after /people/:person_id

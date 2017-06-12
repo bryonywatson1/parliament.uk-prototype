@@ -53,11 +53,24 @@ RSpec.describe 'people', type: :routing do
       include_examples 'nested routes with an id', 'people', 'B4qvo8kI', [], 'show'
 
       context 'constituencies' do
-        # people#costituencies
-        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', ['constituencies'], 'constituencies'
+        # people/person_id/constituencies#constituencies
+        it 'GET people/:person_id/constituencies' do
+          expect(get: '/people/B4qvo8kI/constituencies').to route_to(
+            controller: 'people/constituencies',
+            action:     'constituencies',
+            person_id:    'B4qvo8kI'
+          )
+        end
 
-        # people#current_constituency
-        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', %w(constituencies current), 'current_constituency'
+        # people/person_id/constituencies#current_constituency
+        it 'GET people/:person_id/constituencies/current' do
+          expect(get: '/people/B4qvo8kI/constituencies/current').to route_to(
+            controller: 'people/constituencies',
+            action:     'current_constituency',
+            person_id:    'B4qvo8kI'
+          )
+        end
+
       end
 
       context 'contact points' do
@@ -66,19 +79,46 @@ RSpec.describe 'people', type: :routing do
       end
 
       context 'houses' do
-        # people#houses
-        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', ['houses'], 'houses'
 
-        # people#current_house
-        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', %w(houses current), 'current_house'
+        # people/person_id/houses#houses
+        it 'GET people/:person_id/houses' do
+          expect(get: '/people/B4qvo8kI/houses').to route_to(
+            controller: 'people/houses',
+            action:     'houses',
+            person_id:    'B4qvo8kI'
+          )
+        end
+
+        # people/person_id/houses#current_house
+        it 'GET people/:person_id/houses/current' do
+          expect(get: '/people/B4qvo8kI/houses/current').to route_to(
+            controller: 'people/houses',
+            action:     'current_house',
+            person_id:    'B4qvo8kI'
+          )
+        end
+
       end
 
       context 'parties' do
-        # people#parties
-        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', ['parties'], 'parties'
 
-        # people#current_party
-        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', %w(parties current), 'current_party'
+        # people/person_id/parties#parties
+        it 'GET people/:person_id/parties' do
+          expect(get: '/people/B4qvo8kI/parties').to route_to(
+            controller: 'people/parties',
+            action:     'parties',
+            person_id:    'B4qvo8kI'
+          )
+        end
+
+        # people/person_id/parties#current_party
+        it 'GET people/:person_id/parties/current' do
+          expect(get: '/people/B4qvo8kI/parties/current').to route_to(
+            controller: 'people/parties',
+            action:     'current_party',
+            person_id:    'B4qvo8kI'
+          )
+        end
       end
     end
   end
