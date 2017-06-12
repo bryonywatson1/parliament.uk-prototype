@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     listable('people#a_to_z', 'people#letters')
 
     # /people/members
-    build_members_routes('people', current: true)
+    build_members_routes('people/members', current: true)
   end
 
   # /people (single 'person' scope)

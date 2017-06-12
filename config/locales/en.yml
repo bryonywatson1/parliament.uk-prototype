@@ -93,15 +93,16 @@ en:
     lookup_by_letters:
       title: '%{current_and_former} %{mps_and_lords}'
     members:
-      title: '%{current_and_former} %{mps_and_lords}'
-    a_to_z_members:
-      title: # needs title
-    members_letters:
-      title: '%{current_and_former} %{mps_and_lords}'
-    current_members:
-      title: '%{current} %{mps_and_lords}'
-    current_members_letters:
-      title: '%{current} %{mps_and_lords}'
+      members:
+        title: '%{current_and_former} %{mps_and_lords}'
+      a_to_z_members:
+        title: # needs title
+      members_letters:
+        title: '%{current_and_former} %{mps_and_lords}'
+      current_members:
+        title: '%{current} %{mps_and_lords}'
+      current_members_letters:
+        title: '%{current} %{mps_and_lords}'
     show:
       mp_for: 'MP for'
       contact: 'contact'

@@ -8,38 +8,42 @@ RSpec.describe 'people', type: :routing do
       # people#lookup
       include_examples 'top level routes', 'people', 'lookup'
 
-      # people#member
-      include_examples 'top level routes', 'people', 'members'
-
       # people#postcode_lookup
       include_examples 'top level POST routes', 'people', 'postcode_lookup'
 
       # people#a_to_z
       include_examples 'nested collection routes', 'people', ['a-z'], 'a_to_z'
 
-      # people#a_to_z_members
-      include_examples 'nested collection routes', 'people', ['members', 'a-z'], 'a_to_z_members'
-
-      # people#current_members
-      include_examples 'nested collection routes', 'people', %w(members current), 'current_members'
-
-      # people#a_to_z_current_members
-      include_examples 'nested collection routes', 'people', ['members', 'current', 'a-z'], 'a_to_z_current_members'
-
-      # people#members_letters
-      include_examples 'collection a_to_z route with a letter', 'people', ['members', 'a-z'], 'members_letters', 'a'
-
       # people#letters
       include_examples 'collection a_to_z route with a letter', 'people', ['a-z'], 'letters', 'a'
 
-      # people#current_members_letters
-      include_examples 'collection a_to_z route with a letter', 'people', ['members', 'current', 'a-z'], 'current_members_letters', 'a'
+      # people/members#current_members_letters
+      include_examples 'collection a_to_z route with a letter', 'people/members', ['current', 'a-z'], 'current_members_letters', 'a'
+
+      # people/members#a_to_z_members
+      include_examples 'nested collection routes', 'people/members', ['a-z'], 'a_to_z_members'
+
+      # people/members#current_members
+      include_examples 'nested collection routes', 'people/members', ['current'], 'current_members'
+
+      # people/members#a_to_z_current_members
+      include_examples 'nested collection routes', 'people/members', ['current', 'a-z'], 'a_to_z_current_members'
+
+      # people/members#members_letters
+      include_examples 'collection a_to_z route with a letter', 'people/members', ['a-z'], 'members_letters', 'a'
 
       it 'GET people#lookup_by_letters' do
         expect(get: '/people/a').to route_to(
           controller: 'people',
           action:     'lookup_by_letters',
           letters:    'a'
+        )
+      end
+
+      it 'GET people/members#members' do
+        expect(get: '/people/members').to route_to(
+          controller: 'people/members',
+          action:     'members'
         )
       end
     end
