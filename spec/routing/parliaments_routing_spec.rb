@@ -35,14 +35,36 @@ RSpec.describe 'parliaments', type: :routing do
         end
 
         context 'members' do
-          # parliaments#members
-          include_examples 'nested routes with an id', 'parliaments', 'KL2k1BGP', ['members'], 'members'
+          # parliaments/members#members
+          # include_examples 'nested routes with an id', 'parliaments', 'KL2k1BGP', ['members'], 'members'
+          it "GET parliaments/members#members" do
+            expect(get: '/parliaments/KL2k1BGP/members').to route_to(
+              controller:    'parliaments/members',
+              action:        'members',
+              parliament_id: 'KL2k1BGP',
+            )
+          end
 
-          # parliaments#a_to_z_members
-          include_examples 'nested routes with an id', 'parliaments', 'KL2k1BGP', %w(members a-z), 'a_to_z_members'
+          # parliaments/members#a_to_z_members
+          # include_examples 'nested routes with an id', 'parliaments', 'KL2k1BGP', %w(members a-z), 'a_to_z_members'
+          it "GET parliaments/members#members" do
+            expect(get: '/parliaments/KL2k1BGP/members/a-z').to route_to(
+              controller:    'parliaments/members',
+              action:        'a_to_z_members',
+              parliament_id: 'KL2k1BGP',
+            )
+          end
 
           # parliaments#members_letters
-          include_examples 'a_to_z route with an id and letter', 'parliaments', 'KL2k1BGP', %w(members a-z), 'members_letters', 'a'
+          # include_examples 'a_to_z route with an id and letter', 'parliaments', 'KL2k1BGP', %w(members a-z), 'members_letters', 'a'
+          it "GET parliaments/members#members_letters" do
+            expect(get: '/parliaments/KL2k1BGP/members/a-z/a').to route_to(
+              controller:    'parliaments/members',
+              action:        'members_letters',
+              parliament_id: 'KL2k1BGP',
+              letter:        'a'
+            )
+          end
         end
 
         context 'parties' do

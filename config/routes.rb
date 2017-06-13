@@ -184,7 +184,7 @@ Rails.application.routes.draw do
       # /parliaments/:parliament_id/previous
       get '/previous', to: 'parliaments#previous_parliament'
 
-      build_members_routes('parliaments', current: false)
+      build_members_routes('parliaments/members', current: false)
 
       scope '/houses', as: 'houses' do
         # /parliaments/:parliament_id/houses
