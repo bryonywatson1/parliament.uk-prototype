@@ -223,24 +223,25 @@ en:
       current_members_letters:
         title: '%{current} %{member_type}'
     parties:
-      title: '%{current_and_former} %{parties_and_groups}'
-    current_parties:
-      title: '%{current} %{parties_and_groups}'
-    party:
-      title: # title does not require translation
-      house_no_current_party_members: 'There are currently no members of this party in this House.'
-    party_members:
-      title: '%{current_and_former} %{member_type}'
-    a_to_z_party_members:
-      title: # needs title
-    party_members_letters:
-      title: '%{current_and_former} %{member_type}'
-    current_party_members:
-      title: '%{current} %{member_type}'
-    a_to_z_current_party_members:
-      title: # needs title
-    current_party_members_letters:
-      title: '%{current} %{member_type}'
+      parties:
+        title: '%{current_and_former} %{parties_and_groups}'
+      current_parties:
+        title: '%{current} %{parties_and_groups}'
+      party:
+        title: # title does not require translation
+        house_no_current_party_members: 'There are currently no members of this party in this House.'
+      party_members:
+        title: '%{current_and_former} %{member_type}'
+      a_to_z_party_members:
+        title: # needs title
+      party_members_letters:
+        title: '%{current_and_former} %{member_type}'
+      current_party_members:
+        title: '%{current} %{member_type}'
+      a_to_z_current_party_members:
+        title: # needs title
+      current_party_members_letters:
+        title: '%{current} %{member_type}'
   # postcodes translations
   postcodes:
     find_mp_constituency: 'Find your MP and constituency'

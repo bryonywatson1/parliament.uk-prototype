@@ -70,15 +70,27 @@ RSpec.describe 'houses', type: :routing do
       end
 
       context 'parties' do
-        # houses#parties
-        include_examples 'nested routes with an id', 'houses', 'KL2k1BGP', ['parties'], 'parties'
+        # houses/parties#parties
+        it 'GET houses/parties#parties' do
+          expect(get: '/houses/KL2k1BGP/parties').to route_to(
+            controller: 'houses/parties',
+            action:     'parties',
+            house_id:   'KL2k1BGP',
+          )
+        end
 
         # houses#current_parties
-        include_examples 'nested routes with an id', 'houses', 'KL2k1BGP', %w(parties current), 'current_parties'
+        it 'GET houses/parties#current_parties' do
+          expect(get: '/houses/KL2k1BGP/parties/current').to route_to(
+            controller: 'houses/parties',
+            action:     'current_parties',
+            house_id:   'KL2k1BGP',
+          )
+        end
 
         it 'GET houses#party' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc').to route_to(
-            controller: 'houses',
+            controller: 'houses/parties',
             action:     'party',
             house_id:   'KL2k1BGP',
             party_id:   'jF43Jxoc'
@@ -87,7 +99,7 @@ RSpec.describe 'houses', type: :routing do
 
         it 'GET houses#party_members' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc/members').to route_to(
-            controller: 'houses',
+            controller: 'houses/parties',
             action:     'party_members',
             house_id:   'KL2k1BGP',
             party_id:   'jF43Jxoc'
@@ -96,7 +108,7 @@ RSpec.describe 'houses', type: :routing do
 
         it 'GET houses#a_to_z_party_members' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc/members/a-z').to route_to(
-            controller: 'houses',
+            controller: 'houses/parties',
             action:     'a_to_z_party_members',
             house_id:   'KL2k1BGP',
             party_id:   'jF43Jxoc'
@@ -105,7 +117,7 @@ RSpec.describe 'houses', type: :routing do
 
         it 'GET houses#party_members_letters' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc/members/a-z/a').to route_to(
-            controller: 'houses',
+            controller: 'houses/parties',
             action:     'party_members_letters',
             house_id:   'KL2k1BGP',
             party_id:   'jF43Jxoc',
@@ -115,7 +127,7 @@ RSpec.describe 'houses', type: :routing do
 
         it 'GET houses#current_party_members' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc/members/current').to route_to(
-            controller: 'houses',
+            controller: 'houses/parties',
             action:     'current_party_members',
             house_id:   'KL2k1BGP',
             party_id:   'jF43Jxoc'
@@ -124,7 +136,7 @@ RSpec.describe 'houses', type: :routing do
 
         it 'GET houses#a_to_z_current_party_members' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc/members/current/a-z').to route_to(
-            controller: 'houses',
+            controller: 'houses/parties',
             action:     'a_to_z_current_party_members',
             house_id:   'KL2k1BGP',
             party_id:   'jF43Jxoc'
@@ -133,7 +145,7 @@ RSpec.describe 'houses', type: :routing do
 
         it 'GET houses#a_to_z_current_party_members' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc/members/current/a-z/a').to route_to(
-            controller: 'houses',
+            controller: 'houses/parties',
             action:     'current_party_members_letters',
             house_id:   'KL2k1BGP',
             party_id:   'jF43Jxoc',

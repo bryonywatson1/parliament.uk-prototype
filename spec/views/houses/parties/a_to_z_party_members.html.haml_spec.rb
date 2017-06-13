@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'houses/a_to_z_party_members', vcr: true do
+RSpec.describe 'houses/parties/a_to_z_party_members', vcr: true do
   before do
     assign(:house_id, 'KL2k1BGP')
     assign(:party_id, 'pPvA9vKP')

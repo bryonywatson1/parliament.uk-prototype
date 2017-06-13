@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'houses/current_parties', vcr: true do
+RSpec.describe 'houses/parties/current_parties', vcr: true do
   before do
     allow(FlagHelper).to receive(:dissolution?).and_return(true)
     assign(:house, double(:house, name: 'House of Commons', graph_id: 'KL2k1BGP'))
@@ -17,7 +17,7 @@ RSpec.describe 'houses/current_parties', vcr: true do
 
   context 'partials' do
     it 'will render party' do
-      expect(response).to render_template(partial: 'houses/_party')
+      expect(response).to render_template(partial: 'houses/parties/_party')
     end
 
     it 'will render dissolution message' do

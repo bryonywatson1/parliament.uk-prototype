@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'houses/parties', vcr: true do
+RSpec.describe 'houses/parties/parties', vcr: true do
   before do
-    assign(:house, double(:house, name: 'House of Commons', graph_id: 'KL2k1BGP'))
+    assign(:house, double(:house, name: 'House of Commons', graph_id: 'cqIATgUK'))
     @parties = [double(:party, name: 'Conservative', graph_id: 'jF43Jxoc', member_count: 10)]
 
     render
@@ -16,13 +16,13 @@ RSpec.describe 'houses/parties', vcr: true do
 
   context 'partials' do
     it 'will render party' do
-      expect(response).to render_template(partial: 'houses/_party')
+      expect(response).to render_template(partial: 'houses/parties/_party')
     end
   end
 
   context 'links' do
     it 'will render house_parties_path' do
-      expect(rendered).to have_link('Lords', href: house_parties_path('m1EgVTLj'))
+      expect(rendered).to have_link('Lords', href: house_parties_path('mG2ur5TF'))
     end
   end
 end

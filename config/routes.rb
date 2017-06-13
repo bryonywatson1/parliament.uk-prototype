@@ -136,24 +136,24 @@ Rails.application.routes.draw do
 
       # /houses/:house_id/parties
       scope '/parties', as: 'parties' do
-        get '/', to: 'houses#parties'
-        get '/current', to: 'houses#current_parties'
+        get '/', to: 'houses/parties#parties'
+        get '/current', to: 'houses/parties#current_parties'
 
         # /houses/:house_id/parties/:party_id
         scope '/:party_id', as: 'party' do
-          get '/', to: 'houses#party'
+          get '/', to: 'houses/parties#party'
 
           # /houses/:house_id/parties/:party_id/members
           scope '/members', as: 'members' do
-            get '/', to: 'houses#party_members'
+            get '/', to: 'houses/parties#party_members'
 
-            listable('houses#a_to_z_party_members', 'houses#party_members_letters')
+            listable('houses/parties#a_to_z_party_members', 'houses/parties#party_members_letters')
 
             # /houses/:house_id/parties/:party_id/members/current
             scope '/current', as: 'current' do
-              get '/', to: 'houses#current_party_members'
+              get '/', to: 'houses/parties#current_party_members'
 
-              listable('houses#a_to_z_current_party_members', 'houses#current_party_members_letters')
+              listable('houses/parties#a_to_z_current_party_members', 'houses/parties#current_party_members_letters')
             end
           end
         end

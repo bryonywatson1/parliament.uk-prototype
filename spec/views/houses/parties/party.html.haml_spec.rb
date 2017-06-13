@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'houses/party', vcr: true do
+RSpec.describe 'houses/parties/party', vcr: true do
   context 'member count > 1' do
     before do
       assign(:house, double(:house, name: 'House of Commons', graph_id: 'KL2k1BGP'))
