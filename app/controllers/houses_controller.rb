@@ -3,15 +3,6 @@ class HousesController < ApplicationController
     @houses = parliament_request.houses.get.sort_by(:name)
   end
 
-  def lookup
-    source = params[:source]
-    id = params[:id]
-
-    @house = parliament_request.houses.lookup(source, id).get.first
-
-    redirect_to house_path(@house.graph_id)
-  end
-
   def show
     house_id = params[:house_id]
 
@@ -19,6 +10,15 @@ class HousesController < ApplicationController
       parliament_request.houses(house_id),
       'http://id.ukpds.org/schema/House'
     ).first
+  end
+
+  def lookup
+    source = params[:source]
+    id = params[:id]
+
+    @house = parliament_request.houses.lookup(source, id).get.first
+
+    redirect_to house_path(@house.graph_id)
   end
 
   def lookup_by_letters
