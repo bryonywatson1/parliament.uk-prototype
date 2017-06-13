@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'houses/members', vcr: true do
+RSpec.describe 'houses/members/members', vcr: true do
   before do
     assign(:house, double(:house, name: 'Test House', graph_id: 'KL2k1BGP'))
     assign(:people, [])

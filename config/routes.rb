@@ -132,7 +132,7 @@ Rails.application.routes.draw do
       get '/', to: 'houses#show', house_id: id_format_regex
 
       # /houses/:house_id/members
-      build_members_routes('houses', current: true)
+      build_members_routes('houses/members', current: true)
 
       # /houses/:house_id/parties
       scope '/parties', as: 'parties' do

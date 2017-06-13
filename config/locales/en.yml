@@ -210,17 +210,18 @@ en:
       title: # title does not require translation
       area_they_represent: 'by the area they represent'
     members:
-      title: '%{current_and_former} %{member_type}'
-    a_to_z_members:
-      title: # needs title
-    members_letters:
-      title: '%{current_and_former} %{member_type}'
-    current_members:
-      title: '%{current} %{member_type}'
-    a_to_z_current_members:
-      title: # needs title
-    current_members_letters:
-      title: '%{current} %{member_type}'
+      members:
+        title: '%{current_and_former} %{member_type}'
+      a_to_z_members:
+        title: # needs title
+      members_letters:
+        title: '%{current_and_former} %{member_type}'
+      current_members:
+        title: '%{current} %{member_type}'
+      a_to_z_current_members:
+        title: # needs title
+      current_members_letters:
+        title: '%{current} %{member_type}'
     parties:
       title: '%{current_and_former} %{parties_and_groups}'
     current_parties:

@@ -12,23 +12,61 @@ RSpec.describe 'houses', type: :routing do
       include_examples 'nested routes with an id', 'houses', 'KL2k1BGP', [], 'show'
 
       context 'members' do
-        # houses#members
-        include_examples 'nested routes with an id', 'houses', 'KL2k1BGP', ['members'], 'members'
+        # houses/members#members
+        it 'GET houses/members#members' do
+          expect(get: '/houses/KL2k1BGP/members').to route_to(
+            controller: 'houses/members',
+            action:     'members',
+            house_id:   'KL2k1BGP',
+          )
+        end
 
-        # houses#a_to_z_members
-        include_examples 'nested routes with an id', 'houses', 'KL2k1BGP', ['members', 'a-z'], 'a_to_z_members'
+        # houses/members#a_to_z_members
+        it 'GET houses/members#a_to_z_members' do
+          expect(get: '/houses/KL2k1BGP/members/a-z').to route_to(
+            controller: 'houses/members',
+            action:     'a_to_z_members',
+            house_id:   'KL2k1BGP',
+          )
+        end
 
-        # houses#current_members
-        include_examples 'nested routes with an id', 'houses', 'KL2k1BGP', %w(members current), 'current_members'
+        # houses/members#current_members
+        it 'GET houses/members#current_members' do
+          expect(get: '/houses/KL2k1BGP/members/current').to route_to(
+            controller: 'houses/members',
+            action:     'current_members',
+            house_id:   'KL2k1BGP',
+          )
+        end
 
-        # houses#a_to_z_current_members
-        include_examples 'nested routes with an id', 'houses', 'KL2k1BGP', ['members', 'current', 'a-z'], 'a_to_z_current_members'
+        # houses/members#a_to_z_current_members
+        it 'GET houses/members#a_to_z_current_members' do
+          expect(get: '/houses/KL2k1BGP/members/current/a-z').to route_to(
+            controller: 'houses/members',
+            action:     'a_to_z_current_members',
+            house_id:   'KL2k1BGP',
+          )
+        end
 
-        # houses#members_letters
-        include_examples 'a_to_z route with an id and letter', 'houses', 'KL2k1BGP', ['members', 'a-z'], 'members_letters', 'a'
+        # houses/members#members_letters
+        it 'GET houses/members#members_letters' do
+          expect(get: '/houses/KL2k1BGP/members/a-z/a').to route_to(
+            controller: 'houses/members',
+            action:     'members_letters',
+            house_id:   'KL2k1BGP',
+            letter:     'a'
+          )
+        end
 
-        # houses#current_members_letters
-        include_examples 'a_to_z route with an id and letter', 'houses', 'KL2k1BGP', ['members', 'current', 'a-z'], 'current_members_letters', 'a'
+        # houses/members#current_members_letters
+        it 'GET houses/members#current_members_letters' do
+          expect(get: '/houses/KL2k1BGP/members/current/a-z/a').to route_to(
+            controller: 'houses/members',
+            action:     'current_members_letters',
+            house_id:   'KL2k1BGP',
+            letter:     'a'
+          )
+        end
       end
 
       context 'parties' do
