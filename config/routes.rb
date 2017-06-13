@@ -226,19 +226,19 @@ Rails.application.routes.draw do
 
       scope '/parties', as: 'parties' do
         # parliaments/:parliament_id/parties
-        get '/', to: 'parliaments#parties'
+        get '/', to: 'parliaments/parties#parties'
       end
 
       scope '/parties', as: 'party' do
         scope '/:party_id' do
           # /parliaments/:parliament_id/parties/:party_id
-          get '/', to: 'parliaments#party', party_id: id_format_regex
+          get '/', to: 'parliaments/parties#party', party_id: id_format_regex
 
           scope '/members', as: 'members' do
             # /parliaments/:parliament_id/parties/:party_id/members
-            get '/', to: 'parliaments#party_members'
+            get '/', to: 'parliaments/parties#party_members'
 
-            listable('parliaments#a_to_z_party_members', 'parliaments#party_members_letters')
+            listable('parliaments/parties#a_to_z_party_members', 'parliaments/parties#party_members_letters')
           end
         end
       end
