@@ -145,15 +145,15 @@ Rails.application.routes.draw do
 
           # /houses/:house_id/parties/:party_id/members
           scope '/members', as: 'members' do
-            get '/', to: 'houses/parties#party_members'
+            get '/', to: 'houses/parties/members#party_members'
 
-            listable('houses/parties#a_to_z_party_members', 'houses/parties#party_members_letters')
+            listable('houses/parties/members#a_to_z_party_members', 'houses/parties/members#party_members_letters')
 
             # /houses/:house_id/parties/:party_id/members/current
             scope '/current', as: 'current' do
-              get '/', to: 'houses/parties#current_party_members'
+              get '/', to: 'houses/parties/members#current_party_members'
 
-              listable('houses/parties#a_to_z_current_party_members', 'houses/parties#current_party_members_letters')
+              listable('houses/parties/members#a_to_z_current_party_members', 'houses/parties/members#current_party_members_letters')
             end
           end
         end

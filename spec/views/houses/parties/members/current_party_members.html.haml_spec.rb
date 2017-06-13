@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'houses/parties/current_party_members', vcr: true do
+RSpec.describe 'houses/parties/members/current_party_members', vcr: true do
   before do
     allow(FlagHelper).to receive(:dissolution?).and_return(true)
     assign(:house, double(:house, name: 'Test House', graph_id: 'KL2k1BGP'))
