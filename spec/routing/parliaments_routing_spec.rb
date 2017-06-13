@@ -121,34 +121,75 @@ RSpec.describe 'parliaments', type: :routing do
         end
 
         context 'houses' do
-          # parliaments#houses
-          include_examples 'nested routes with an id', 'parliaments', 'KL2k1BGP', ['houses'], 'houses'
+          # parliaments/houses#houses
+          it 'GET parliaments/houses#houses' do
+            expect(get: '/parliaments/KL2k1BGP/houses').to route_to(
+              controller:    'parliaments/houses',
+              action:        'houses',
+              parliament_id: 'KL2k1BGP'
+            )
+          end
 
           context 'house' do
-            # parliaments#house
-            include_examples 'nested routes with multiple ids', 'parliaments', 'KL2k1BGP', ['houses'], 'house', '12341234', ['']
+            # parliaments/houses#house
+            it 'GET parliaments/houses#house' do
+              expect(get: '/parliaments/KL2k1BGP/houses/12341234').to route_to(
+                controller:    'parliaments/houses',
+                action:        'house',
+                parliament_id: 'KL2k1BGP',
+                house_id:      '12341234'
+              )
+            end
           end
 
           context 'members' do
-            # parliaments#house_members
-            include_examples 'nested routes with multiple ids', 'parliaments', 'KL2k1BGP', ['houses'], 'house_members', '12341234', %w(members)
+            # parliaments/houses#house_members
+            it 'GET parliaments/houses#house_members' do
+              expect(get: '/parliaments/KL2k1BGP/houses/12341234/members').to route_to(
+                controller:    'parliaments/houses',
+                action:        'house_members',
+                parliament_id: 'KL2k1BGP',
+                house_id:      '12341234'
+              )
+            end
+            # parliaments/houses#a_to_z_house_members
+            it 'GET parliaments/houses#a_to_z_house_members' do
+              expect(get: '/parliaments/KL2k1BGP/houses/12341234/members/a-z').to route_to(
+                controller:    'parliaments/houses',
+                action:        'a_to_z_house_members',
+                parliament_id: 'KL2k1BGP',
+                house_id:      '12341234'
+              )
+            end
 
-            # parliaments#a_to_z_house_members
-            include_examples 'nested routes with multiple ids', 'parliaments', 'KL2k1BGP', ['houses'], 'a_to_z_house_members', '12341234', %w(members a-z)
-
-            #parliaments#house_members_letters
-            include_examples 'nested routes with multiple ids and letter', 'parliaments', 'KL2k1BGP', ['houses'], 'house_members_letters', '12341234', %w(members a-z a)
+            #parliaments/houses#house_members_letters
+            it 'GET parliaments/houses#house_members_letters' do
+              expect(get: '/parliaments/KL2k1BGP/houses/12341234/members/a-z/a').to route_to(
+                controller:    'parliaments/houses',
+                action:        'house_members_letters',
+                parliament_id: 'KL2k1BGP',
+                house_id:      '12341234',
+                letter:        'a'
+              )
+            end
           end
 
           context 'parties' do
-            # parliaments#house_parties
-            include_examples 'nested routes with multiple ids', 'parliaments', 'KL2k1BGP', ['houses'], 'house_parties', '12341234', ['parties']
+            # parliaments/houses#house_parties
+            it 'GET parliaments/houses#house_parties' do
+              expect(get: '/parliaments/KL2k1BGP/houses/12341234/parties').to route_to(
+                controller:    'parliaments/houses',
+                action:        'house_parties',
+                parliament_id: 'KL2k1BGP',
+                house_id:      '12341234'
+              )
+            end
 
             context 'party' do
-              # parliaments#house_party
-              it 'GET parliaments#house_party' do
+              # parliaments/houses#house_party
+              it 'GET parliaments/houses#house_party' do
                 expect(get: '/parliaments/12341234/houses/12345678/parties/87654321').to route_to(
-                  controller:    'parliaments',
+                  controller:    'parliaments/houses',
                   action:        'house_party',
                   parliament_id: '12341234',
                   house_id:      '12345678',
@@ -158,10 +199,10 @@ RSpec.describe 'parliaments', type: :routing do
             end
 
             context 'members' do
-              # parliaments#house_party_members
+              # parliaments/houses#house_party_members
               it 'GET parliaments#house_party_members' do
                 expect(get: '/parliaments/12341234/houses/12345678/parties/87654321/members').to route_to(
-                  controller:    'parliaments',
+                  controller:    'parliaments/houses',
                   action:        'house_party_members',
                   parliament_id: '12341234',
                   house_id:      '12345678',
@@ -169,10 +210,10 @@ RSpec.describe 'parliaments', type: :routing do
                 )
               end
 
-              # parliaments#a_to_z_house_party_members
+              # parliaments/houses#a_to_z_house_party_members
               it 'GET parliaments#a_to_z_house_party_members' do
                 expect(get: '/parliaments/12341234/houses/12345678/parties/87654321/members/a-z').to route_to(
-                  controller:    'parliaments',
+                  controller:    'parliaments/houses',
                   action:        'a_to_z_house_party_members',
                   parliament_id: '12341234',
                   house_id:      '12345678',
@@ -180,10 +221,10 @@ RSpec.describe 'parliaments', type: :routing do
                 )
               end
 
-              #parliaments#house_party_members_letters
+              #parliaments/houses#house_party_members_letters
               it 'GET parliaments#house_party_members_letters' do
                 expect(get: '/parliaments/12341234/houses/12345678/parties/87654321/members/a-z/a').to route_to(
-                  controller:    'parliaments',
+                  controller:    'parliaments/houses',
                   action:        'house_party_members_letters',
                   parliament_id: '12341234',
                   house_id:      '12345678',

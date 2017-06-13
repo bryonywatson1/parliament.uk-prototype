@@ -188,36 +188,36 @@ Rails.application.routes.draw do
 
       scope '/houses', as: 'houses' do
         # /parliaments/:parliament_id/houses
-        get '/', to: 'parliaments#houses'
+        get '/', to: 'parliaments/houses#houses'
       end
 
       scope '/houses', as: 'house' do
         scope ':house_id' do
           # /parliaments/:parliament_id/houses/:house_id
-          get '/', to: 'parliaments#house', house_id: id_format_regex
+          get '/', to: 'parliaments/houses#house', house_id: id_format_regex
 
           scope '/members', as: 'members' do
             # /parliaments/:parliament_id/houses/:house_id/members
-            get '/', to: 'parliaments#house_members'
+            get '/', to: 'parliaments/houses#house_members'
 
-            listable('parliaments#a_to_z_house_members', 'parliaments#house_members_letters')
+            listable('parliaments/houses#a_to_z_house_members', 'parliaments/houses#house_members_letters')
           end
 
           scope '/parties', as: 'parties' do
             # /parliaments/:parliament_id/houses/:house_id/parties
-            get '/', to: 'parliaments#house_parties'
+            get '/', to: 'parliaments/houses#house_parties'
           end
 
           scope '/parties', as: 'party' do
             scope ':party_id' do
               # /parliaments/:parliament_id/houses/:house_id/parties/:party_id
-              get '/', to: 'parliaments#house_party', party_id: id_format_regex
+              get '/', to: 'parliaments/houses#house_party', party_id: id_format_regex
 
               scope '/members', as: 'members' do
                 # /parliaments/:parliament_id/houses/:house_id/parties/:party_id/members
-                get '/', to: 'parliaments#house_party_members'
+                get '/', to: 'parliaments/houses#house_party_members'
 
-                listable('parliaments#a_to_z_house_party_members', 'parliaments#house_party_members_letters')
+                listable('parliaments/houses#a_to_z_house_party_members', 'parliaments/houses#house_party_members_letters')
               end
             end
           end
