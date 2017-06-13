@@ -26,7 +26,7 @@ Rails.application.routes.draw do
       # /people/:person_id/constituencies
       build_root_and_current_routes('people/constituencies', 'constituencies')
 
-      get '/contact-points', to: 'people#contact_points'
+      get '/contact-points', to: 'people/contact_points#contact_points'
 
       # /people/:person_id/houses
       build_root_and_current_routes('people/houses', 'houses')

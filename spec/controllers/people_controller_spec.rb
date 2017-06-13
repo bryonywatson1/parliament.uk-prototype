@@ -118,31 +118,6 @@ RSpec.describe PeopleController, vcr: true do
     end
   end
 
-
-
-  describe "GET contact_points" do
-    before(:each) do
-      get :contact_points, params: { person_id: '7TX8ySd4' }
-    end
-
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @person and @contact_points' do
-      expect(assigns(:person)).to be_a(Grom::Node)
-      expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
-      assigns(:contact_points).each do |contact_point|
-        expect(contact_point).to be_a(Grom::Node)
-        expect(contact_point.type).to eq('http://id.ukpds.org/schema/ContactPoint')
-      end
-    end
-
-    it 'renders the contact_points template' do
-      expect(response).to render_template('contact_points')
-    end
-  end
-
   describe 'GET letters' do
     context 'there is a response' do
       before(:each) do

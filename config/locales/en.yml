@@ -118,6 +118,7 @@ en:
       current_constituency:
         title: '%{current} %{constituency}'
     contact_points:
+      contact_points:
     houses:
       houses:
         title: '%{current_and_former} %{house_plural}'

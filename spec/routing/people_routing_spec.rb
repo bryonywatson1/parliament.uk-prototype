@@ -74,8 +74,14 @@ RSpec.describe 'people', type: :routing do
       end
 
       context 'contact points' do
-        # people#contact_points
-        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', ['contact-points'], 'contact_points'
+        # people/contact_points#contact_points
+        it 'GET people/:person_id/contact_points' do
+          expect(get: '/people/B4qvo8kI/contact-points').to route_to(
+            controller: 'people/contact_points',
+            action:     'contact_points',
+            person_id:    'B4qvo8kI'
+          )
+        end
       end
 
       context 'houses' do
