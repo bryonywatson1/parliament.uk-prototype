@@ -30,7 +30,14 @@ RSpec.describe 'constituencies', type: :routing do
       include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', [], 'show'
 
       # constituencies#contact_point
-      include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', ['contact-point'], 'contact_point'
+      # include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', ['contact-point'], 'contact_point'
+      it 'GET constituencies/contact_points#contact_point' do
+        expect(get: '/constituencies/MtbjxRrE/contact-point').to route_to(
+          controller:         'constituencies/contact_points',
+          action:             'contact_point',
+          constituency_id:    'MtbjxRrE'
+        )
+      end
 
       # constituencies#map
       include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', ['map'], 'map'

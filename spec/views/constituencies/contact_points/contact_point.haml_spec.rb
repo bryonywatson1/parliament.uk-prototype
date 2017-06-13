@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'constituencies/contact_point', vcr: true do
+RSpec.describe 'constituencies/contact_points/contact_point', vcr: true do
   before do
     assign(:constituency, double(:constituency, name: 'Test Constituency Name', contact_points: [double(:contact_point, email: 'testemail@test.com', phone_number: '07700000000', fax_number: '01230000000', postal_addresses: [double(:postal_address, full_address: 'Test Address')], graph_id: '8ONg5lY6')]))
     render

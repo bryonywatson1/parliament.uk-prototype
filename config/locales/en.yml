@@ -164,8 +164,9 @@ en:
       title: '%{current} %{constituency_plural}'
     map:
       title: # title does not require translation
-    contact_point:
-      title: # title does not require translation
+    contact_points:
+      contact_point:
+        title: # title does not require translation
     shared_translations:
       vacant: 'Vacant'
     constituency:

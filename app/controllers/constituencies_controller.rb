@@ -97,19 +97,6 @@ class ConstituenciesController < ApplicationController
     ).first
   end
 
-  # Renders a contact point given a constituency id.
-  # @controller_action_param :constituency_id [String] 8 character identifier that identifies constituency in graph database.
-  # @return [Grom::Node] object with type 'http://id.ukpds.org/schema/ConstituencyGroup' which has a contact point.
-
-  def contact_point
-    constituency_id = params[:constituency_id]
-
-    @constituency = RequestHelper.filter_response_data(
-      parliament_request.constituencies(constituency_id).contact_point,
-      'http://id.ukpds.org/schema/ConstituencyGroup'
-    ).first
-  end
-
   # Renders a list of seat incumbents in reverse chronological start date order, given a constituency id.
   # @controller_action_param :constituency_id [String] 8 character identifier that identifies constituency in graph database.
   # @return Array] Grom::Nodes of type 'http://id.ukpds.org/schema/SeatIncumbency'.
