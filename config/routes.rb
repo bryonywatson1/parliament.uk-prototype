@@ -98,7 +98,7 @@ Rails.application.routes.draw do
       get '/map', to: 'constituencies#map'
 
       # /constituencies/:constituency_id/members
-      build_root_and_current_routes('constituencies', 'members')
+      build_root_and_current_routes('constituencies/members', 'members')
     end
 
     # Allow lookups - but ensure they are SECOND in the routes list after /constituencies/:constituency_id

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'constituencies/current_member', vcr: true do
+RSpec.describe 'constituencies/members/current_member', vcr: true do
   before(:each) do
     allow(FlagHelper).to receive(:dissolution?).and_return(true)
   end

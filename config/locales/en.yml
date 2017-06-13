@@ -156,9 +156,10 @@ en:
     show:
       title: # title does not require translation
     members:
-      title: '%{current_and_former} %{mp_plural}'
-    current_member:
-      title:  '%{current} %{mp}'
+      members:
+        title: '%{current_and_former} %{mp_plural}'
+      current_member:
+        title:  '%{current} %{mp}'
     current_letters:
       title: '%{current} %{constituency_plural}'
     map:

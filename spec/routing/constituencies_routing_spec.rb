@@ -35,11 +35,24 @@ RSpec.describe 'constituencies', type: :routing do
       # constituencies#map
       include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', ['map'], 'map'
 
-      # constituencies#members
-      include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', ['members'], 'members'
+      # constituencies/members#members
+      it 'GET constituencies/members#members' do
+        expect(get: '/constituencies/MtbjxRrE/members').to route_to(
+          controller:         'constituencies/members',
+          action:             'members',
+          constituency_id:    'MtbjxRrE'
+        )
+      end
 
-      # constituencies#current_member
-      include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', %w(members current), 'current_member'
+      # constituencies/members#current_member
+      it 'GET constituencies/members#current_member' do
+        expect(get: '/constituencies/MtbjxRrE/members/current').to route_to(
+          controller:         'constituencies/members',
+          action:             'current_member',
+          constituency_id:    'MtbjxRrE'
+        )
+      end
+
     end
 
     it 'GET constituencies#lookup_by_letters' do
