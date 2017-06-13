@@ -20,23 +20,67 @@ RSpec.describe 'parties', type: :routing do
       # parties#show
       include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', [], 'show'
 
-      # parties#members
-      include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', ['members'], 'members'
+      # parties/members#members
+      # include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', ['members'], 'members'
+      it 'GET parties/members#members' do
+        expect(get: '/parties/jF43Jxoc/members').to route_to(
+          controller: 'parties/members',
+          action:     'members',
+          party_id:   'jF43Jxoc'
+        )
+      end
 
       # parties#a_to_z_members
-      include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', ['members', 'a-z'], 'a_to_z_members'
+      # include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', ['members', 'a-z'], 'a_to_z_members'
+      it 'GET parties/members#a_to_z_members' do
+        expect(get: '/parties/jF43Jxoc/members/a-z').to route_to(
+          controller: 'parties/members',
+          action:     'a_to_z_members',
+          party_id:   'jF43Jxoc'
+        )
+      end
 
-      # parties#current_members
-      include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', %w(members current), 'current_members'
+      # parties/members#current_members
+      # include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', %w(members current), 'current_members'
+      it 'GET parties/members#current_members' do
+        expect(get: '/parties/jF43Jxoc/members/current').to route_to(
+          controller: 'parties/members',
+          action:     'current_members',
+          party_id:   'jF43Jxoc'
+        )
+      end
 
-      # parties#a_to_z_current_members
-      include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', ['members', 'current', 'a-z'], 'a_to_z_current_members'
+      # parties/members#a_to_z_current_members
+      # include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', ['members', 'current', 'a-z'], 'a_to_z_current_members'
+      it 'GET parties/members#current_members' do
+        expect(get: '/parties/jF43Jxoc/members/current/a-z').to route_to(
+          controller: 'parties/members',
+          action:     'a_to_z_current_members',
+          party_id:   'jF43Jxoc'
+        )
+      end
 
-      # parties#members_letters
-      include_examples 'a_to_z route with an id and letter', 'parties', 'jF43Jxoc', ['members', 'a-z'], 'members_letters', 'a'
+      # parties/members#members_letters
+      # include_examples 'a_to_z route with an id and letter', 'parties', 'jF43Jxoc', ['members', 'a-z'], 'members_letters', 'a'
+      it 'GET parties/members#members_letters' do
+        expect(get: '/parties/jF43Jxoc/members/a-z/a').to route_to(
+          controller: 'parties/members',
+          action:     'members_letters',
+          party_id:   'jF43Jxoc',
+          letter:    'a',
+        )
+      end
 
-      # parties#current_members_letters
-      include_examples 'a_to_z route with an id and letter', 'parties', 'jF43Jxoc', ['members', 'current', 'a-z'], 'current_members_letters', 'a'
+      # parties/members#current_members_letters
+      # include_examples 'a_to_z route with an id and letter', 'parties', 'jF43Jxoc', ['members', 'current', 'a-z'], 'current_members_letters', 'a'
+      it 'GET parties/members#current_members_letters' do
+        expect(get: '/parties/jF43Jxoc/members/current/a-z/a').to route_to(
+          controller: 'parties/members',
+          action:     'current_members_letters',
+          party_id:   'jF43Jxoc',
+          letter:    'a',
+        )
+      end
     end
 
     it 'GET parties#lookup_by_letters' do

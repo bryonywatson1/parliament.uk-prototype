@@ -53,7 +53,7 @@ Rails.application.routes.draw do
       get '/', to: 'parties#show', party_id: id_format_regex
 
       # /parties/:party_id/members
-      build_members_routes('parties', current: true)
+      build_members_routes('parties/members', current: true)
     end
 
     # Allow lookups - but ensure they are SECOND in the routes list after /parties/:party_id

@@ -190,17 +190,18 @@ en:
       title: # title does not require translation
       party_no_current_members: 'There are no MPs or Lords in this party.'
     members:
-      title: '%{current_and_former} %{member_plural}'
-    a_to_z_members:
-      title: # needs title
-    members_letters:
-      title: '%{current_and_former} %{member_plural}'
-    current_members:
-      title: '%{current} %{member_plural}'
-    a_to_z_current_members:
-      title: # needs title
-    current_members_letters:
-      title: '%{current} %{member_plural}'
+      members:
+        title: '%{current_and_former} %{member_plural}'
+      a_to_z_members:
+        title: # needs title
+      members_letters:
+        title: '%{current_and_former} %{member_plural}'
+      current_members:
+        title: '%{current} %{member_plural}'
+      a_to_z_current_members:
+        title: # needs title
+      current_members_letters:
+        title: '%{current} %{member_plural}'
   # houses translations
   houses:
     index:
