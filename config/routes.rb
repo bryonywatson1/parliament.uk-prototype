@@ -245,9 +245,9 @@ Rails.application.routes.draw do
 
       scope '/constituencies', as: 'constituencies' do
         # parliaments/:parliament_id/constituencies
-        get '/', to: 'parliaments#constituencies'
+        get '/', to: 'parliaments/constituencies#constituencies'
 
-        listable('parliaments#a_to_z_constituencies', 'parliaments#constituencies_letters')
+        listable('parliaments/constituencies#a_to_z_constituencies', 'parliaments/constituencies#constituencies_letters')
       end
     end
   end

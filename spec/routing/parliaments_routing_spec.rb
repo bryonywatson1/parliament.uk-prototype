@@ -237,20 +237,34 @@ RSpec.describe 'parliaments', type: :routing do
         end
 
         context 'constituencies' do
-          # parliaments#constituencies
-          include_examples 'nested routes with an id', 'parliaments', 'KL2k1BGP', ['constituencies'], 'constituencies'
-
-          # parliaments#a_to_z_constituencies
-          it 'GET parliaments#a_to_z_constituencies' do
+          # parliaments/constituencies#constituencies
+          #include_examples 'nested routes with an id', 'parliaments/constituencies', 'KL2k1BGP', ['constituencies'], 'constituencies'
+          it 'GET parliaments/constituencies#constituencies' do
+            expect(get: '/parliaments/12345678/constituencies').to route_to(
+              controller:    'parliaments/constituencies',
+              action:        'constituencies',
+              parliament_id: '12345678'
+            )
+          end
+          # parliaments/constituencies#a_to_z_constituencies
+          it 'GET parliaments/constituencies#a_to_z_constituencies' do
             expect(get: '/parliaments/12345678/constituencies/a-z').to route_to(
-              controller:    'parliaments',
+              controller:    'parliaments/constituencies',
               action:        'a_to_z_constituencies',
               parliament_id: '12345678'
             )
           end
 
-          # parliaments#constituencies_letters
-          include_examples 'a_to_z route with an id and letter', 'parliaments', 'KL2k1BGP', %w(constituencies a-z), 'constituencies_letters', 'a'
+          # parliaments/constituencies#constituencies_letters
+          #include_examples 'a_to_z route with an id and letter', 'parliaments/constituencies', 'KL2k1BGP', %w(constituencies a-z), 'constituencies_letters', 'a'
+          it 'GET parliaments/constituencies#constituencies_letters' do
+            expect(get: '/parliaments/12345678/constituencies/a-z/a').to route_to(
+              controller:    'parliaments/constituencies',
+              action:        'constituencies_letters',
+              parliament_id: '12345678',
+              letter:         'a'
+            )
+          end
         end
       end
     end
