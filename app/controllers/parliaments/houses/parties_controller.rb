@@ -1,6 +1,6 @@
 class Parliaments::Houses::PartiesController < ApplicationController
 
-    def house_parties
+    def index
       parliament_id = params[:parliament_id]
       house_id      = params[:house_id]
 
@@ -18,7 +18,7 @@ class Parliaments::Houses::PartiesController < ApplicationController
       @letters    = @letters.map(&:values)
     end
 
-    def house_party
+    def show
       parliament_id = params[:parliament_id]
       house_id      = params[:house_id]
       party_id      = params[:party_id]

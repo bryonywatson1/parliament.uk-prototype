@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Parliaments::Houses::PartiesController, vcr: true do
 
-    describe 'GET house_parties' do
+    describe 'GET index' do
       before(:each) do
-        get :house_parties, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK' }
+        get :index, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK' }
       end
 
       it 'should have a response with http status ok (200)' do
@@ -40,21 +40,21 @@ RSpec.describe Parliaments::Houses::PartiesController, vcr: true do
       end
 
       it 'renders the house template' do
-        expect(response).to render_template('house_parties')
+        expect(response).to render_template('index')
       end
     end
 
-    describe 'GET house_party' do
+    describe 'GET show' do
       context '@party is nil' do
         # updated VCR cassette in order to set @party to nil
         it 'should raise ActionController::RoutingError' do
-          expect{get :house_party, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK', party_id: 'P6LNyUn4' }}.to raise_error(ActionController::RoutingError)
+          expect{get :show, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK', party_id: 'P6LNyUn4' }}.to raise_error(ActionController::RoutingError)
         end
       end
 
       context '@party is not nil' do
         before(:each) do
-          get :house_party, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK', party_id: 'P6LNyUn4' }
+          get :show, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK', party_id: 'P6LNyUn4' }
         end
 
         it 'should have a response with http status ok (200)' do
@@ -83,7 +83,7 @@ RSpec.describe Parliaments::Houses::PartiesController, vcr: true do
         end
 
         it 'renders the house template' do
-          expect(response).to render_template('house_party')
+          expect(response).to render_template('show')
         end
       end
     end

@@ -205,13 +205,13 @@ Rails.application.routes.draw do
 
           scope '/parties', as: 'parties' do
             # /parliaments/:parliament_id/houses/:house_id/parties
-            get '/', to: 'parliaments/houses/parties#house_parties'
+            get '/', to: 'parliaments/houses/parties#index'
           end
 
           scope '/parties', as: 'party' do
             scope ':party_id' do
               # /parliaments/:parliament_id/houses/:house_id/parties/:party_id
-              get '/', to: 'parliaments/houses/parties#house_party', party_id: id_format_regex
+              get '/', to: 'parliaments/houses/parties#show', party_id: id_format_regex
 
               scope '/members', as: 'members' do
                 # /parliaments/:parliament_id/houses/:house_id/parties/:party_id/members
