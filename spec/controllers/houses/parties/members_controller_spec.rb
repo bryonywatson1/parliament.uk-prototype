@@ -34,9 +34,9 @@ RSpec.describe Houses::Parties::MembersController, vcr: true do
     end
   end
 
-  describe "GET party_members_letters" do
+  describe "GET letters" do
     before(:each) do
-      get :party_members_letters, params: { house_id: 'cqIATgUK', party_id: 'YuP8Vh7a', letter: 't' }
+      get :letters, params: { house_id: 'cqIATgUK', party_id: 'YuP8Vh7a', letter: 't' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -62,13 +62,13 @@ RSpec.describe Houses::Parties::MembersController, vcr: true do
     end
 
     it 'renders the party_members_letters template' do
-      expect(response).to render_template('party_members_letters')
+      expect(response).to render_template('letters')
     end
   end
 
-  describe "GET current_party_members" do
+  describe "GET current" do
     before(:each) do
-      get :current_party_members, params: { house_id: 'mG2ur5TF', party_id: 'YuP8Vh7a' }
+      get :current, params: { house_id: 'mG2ur5TF', party_id: 'YuP8Vh7a' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -94,13 +94,13 @@ RSpec.describe Houses::Parties::MembersController, vcr: true do
     end
 
     it 'renders the current_party_members template' do
-      expect(response).to render_template('current_party_members')
+      expect(response).to render_template('current')
     end
   end
 
-  describe "GET current_party_members_letters" do
+  describe "GET current_letters" do
     before(:each) do
-      get :current_party_members_letters, params: { house_id: 'mG2ur5TF', party_id: 'YuP8Vh7a', letter: 't' }
+      get :current_letters, params: { house_id: 'mG2ur5TF', party_id: 'YuP8Vh7a', letter: 't' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -126,13 +126,13 @@ RSpec.describe Houses::Parties::MembersController, vcr: true do
     end
 
     it 'renders the current_party_members_letters template' do
-      expect(response).to render_template('current_party_members_letters')
+      expect(response).to render_template('current_letters')
     end
   end
 
-  describe "GET a_to_z_party_members" do
+  describe "GET a_to_z" do
     before(:each) do
-      get :a_to_z_party_members, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4' }
+      get :a_to_z, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -144,13 +144,13 @@ RSpec.describe Houses::Parties::MembersController, vcr: true do
     end
 
     it 'renders the a_to_z_party_members template' do
-      expect(response).to render_template('a_to_z_party_members')
+      expect(response).to render_template('a_to_z')
     end
   end
 
-  describe "GET a_to_z_current_party_members" do
+  describe "GET a_to_z_current" do
     before(:each) do
-      get :a_to_z_current_party_members, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4' }
+      get :a_to_z_current, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -162,7 +162,7 @@ RSpec.describe Houses::Parties::MembersController, vcr: true do
     end
 
     it 'renders the a_to_z_current_party_members template' do
-      expect(response).to render_template('a_to_z_current_party_members')
+      expect(response).to render_template('a_to_z_current')
     end
   end
 

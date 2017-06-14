@@ -137,7 +137,7 @@ Rails.application.routes.draw do
       # /houses/:house_id/parties
       scope '/parties', as: 'parties' do
         get '/', to: 'houses/parties#index'
-        get '/current', to: 'houses/parties#current_parties'
+        get '/current', to: 'houses/parties#current'
 
         # /houses/:house_id/parties/:party_id
         scope '/:party_id', as: 'party' do
@@ -147,13 +147,13 @@ Rails.application.routes.draw do
           scope '/members', as: 'members' do
             get '/', to: 'houses/parties/members#index'
 
-            listable('houses/parties/members#a_to_z_party_members', 'houses/parties/members#party_members_letters')
+            listable('houses/parties/members#a_to_z', 'houses/parties/members#letters')
 
             # /houses/:house_id/parties/:party_id/members/current
             scope '/current', as: 'current' do
-              get '/', to: 'houses/parties/members#current_party_members'
+              get '/', to: 'houses/parties/members#current'
 
-              listable('houses/parties/members#a_to_z_current_party_members', 'houses/parties/members#current_party_members_letters')
+              listable('houses/parties/members#a_to_z_current', 'houses/parties/members#current_letters')
             end
           end
         end

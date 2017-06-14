@@ -229,7 +229,7 @@ en:
     parties:
       index:
         title: '%{current_and_former} %{parties_and_groups}'
-      current_parties:
+      current:
         title: '%{current} %{parties_and_groups}'
       show:
         title: # title does not require translation
@@ -237,15 +237,15 @@ en:
       members:
         index:
           title: '%{current_and_former} %{member_type}'
-        a_to_z_party_members:
+        a_to_z:
           title: # needs title
-        party_members_letters:
+        letters:
           title: '%{current_and_former} %{member_type}'
-        current_party_members:
+        current:
           title: '%{current} %{member_type}'
-        a_to_z_current_party_members:
+        a_to_z_current:
           title: # needs title
-        current_party_members_letters:
+        current_letters:
           title: '%{current} %{member_type}'
   # postcodes translations
   postcodes:
