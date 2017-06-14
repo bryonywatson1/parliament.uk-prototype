@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Parliaments::Houses::MembersController, vcr: true do
 
-  describe 'GET house_members' do
+  describe 'GET index' do
     before(:each) do
-      get :house_members, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK' }
+      get :index, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -40,7 +40,7 @@ RSpec.describe Parliaments::Houses::MembersController, vcr: true do
     end
 
     it 'renders the house template' do
-      expect(response).to render_template('house_members')
+      expect(response).to render_template('index')
     end
   end
 
