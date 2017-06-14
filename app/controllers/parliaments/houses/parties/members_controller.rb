@@ -22,7 +22,7 @@ class Parliaments::Houses::Parties::MembersController < ApplicationController
   end
 
 
-  def a_to_z_house_party_members
+  def a_to_z
     parliament_id = params[:parliament_id]
     house_id      = params[:house_id]
     party_id      = params[:party_id]
@@ -41,7 +41,7 @@ class Parliaments::Houses::Parties::MembersController < ApplicationController
     @letters    = @letters.map(&:value)
   end
 
-  def house_party_members_letters
+  def letters
     parliament_id = params[:parliament_id]
     house_id      = params[:house_id]
     party_id      = params[:party_id]
