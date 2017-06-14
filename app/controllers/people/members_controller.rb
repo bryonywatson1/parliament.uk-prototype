@@ -1,6 +1,4 @@
 class People::MembersController < ApplicationController
-
-
   def index
     @people, @letters = RequestHelper.filter_response_data(
       parliament_request.people.members,
