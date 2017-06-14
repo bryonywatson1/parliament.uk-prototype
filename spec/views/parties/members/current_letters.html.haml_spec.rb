@@ -1,33 +1,27 @@
 require 'rails_helper'
 
-RSpec.describe 'houses/members/current_members', vcr: true do
+RSpec.describe 'parties/members/current_letters', vcr: true do
   before do
     allow(FlagHelper).to receive(:dissolution?).and_return(true)
-    assign(:house, double(:house, name: 'House of Commons', graph_id: 'KL2k1BGP'))
     assign(:people, [])
-    assign(:current_person_type, 'MPs')
-    assign(:other_person_type, 'Lords')
-    assign(:other_house_id, 'm1EgVTLj')
-    assign(:house_id, 'KL2k1BGP')
-    assign(:party_id, 'jF43Jxoc')
+    assign(:party, double(:party, name: 'Conservative', graph_id: 'jF43Jxoc'))
     assign(:letters, 'A')
     controller.params = { letter: 'a' }
-
     render
   end
 
   context 'header' do
-    it 'will render the current person type' do
-      expect(rendered).to match(/Current MPs/)
+    it 'will render the correct header' do
+      expect(rendered).to match(/Conservative - Current members/)
     end
   end
 
   context 'partials' do
-    it 'will render letter navigation' do
+    it 'will render pugin/components/_navigation-letter' do
       expect(response).to render_template(partial: 'pugin/components/_navigation-letter')
     end
 
-    it 'will render person list' do
+    it 'will render pugin/cards/person-list' do
       expect(response).to render_template(partial: 'pugin/cards/_person-list')
     end
 

@@ -45,9 +45,9 @@ RSpec.describe Houses::MembersController, vcr: true do
     end
   end
 
-  describe "GET current_members" do
+  describe "GET current" do
     before(:each) do
-      get :current_members, params: { house_id: 'mG2ur5TF' }
+      get :current, params: { house_id: 'mG2ur5TF' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -71,13 +71,13 @@ RSpec.describe Houses::MembersController, vcr: true do
     end
 
     it 'renders the current_members template' do
-      expect(response).to render_template('current_members')
+      expect(response).to render_template('current')
     end
   end
 
-  describe "GET members_letters" do
+  describe "GET letters" do
     before(:each) do
-      get :members_letters, params: { house_id: 'cqIATgUK', letter: 'a' }
+      get :letters, params: { house_id: 'cqIATgUK', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -101,13 +101,13 @@ RSpec.describe Houses::MembersController, vcr: true do
     end
 
     it 'renders the members_letters template' do
-      expect(response).to render_template('members_letters')
+      expect(response).to render_template('letters')
     end
   end
 
-  describe "GET current_members_letters" do
+  describe "GET current_letters" do
     before(:each) do
-      get :current_members_letters, params: { house_id: 'mG2ur5TF', letter: 'a' }
+      get :current_letters, params: { house_id: 'mG2ur5TF', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -131,13 +131,13 @@ RSpec.describe Houses::MembersController, vcr: true do
     end
 
     it 'renders the current_members_letters template' do
-      expect(response).to render_template('current_members_letters')
+      expect(response).to render_template('current_letters')
     end
   end
 
-  describe "GET a_to_z_members" do
+  describe "GET a_to_z" do
     before(:each) do
-      get :a_to_z_members, params: { house_id: 'KL2k1BGP' }
+      get :a_to_z, params: { house_id: 'KL2k1BGP' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -149,13 +149,13 @@ RSpec.describe Houses::MembersController, vcr: true do
     end
 
     it 'renders the a_to_z_members template' do
-      expect(response).to render_template('a_to_z_members')
+      expect(response).to render_template('a_to_z')
     end
   end
 
-  describe "GET a_to_z_current_members" do
+  describe "GET a_to_z_current" do
     before(:each) do
-      get :a_to_z_current_members, params: { house_id: 'KL2k1BGP' }
+      get :a_to_z_current, params: { house_id: 'KL2k1BGP' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -167,7 +167,7 @@ RSpec.describe Houses::MembersController, vcr: true do
     end
 
     it 'renders the a_to_z_current_members template' do
-      expect(response).to render_template('a_to_z_current_members')
+      expect(response).to render_template('a_to_z_current')
     end
   end
 

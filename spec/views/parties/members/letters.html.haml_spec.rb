@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'parties/members/current_members_letters', vcr: true do
+RSpec.describe 'parties/members/letters', vcr: true do
   before do
-    allow(FlagHelper).to receive(:dissolution?).and_return(true)
     assign(:people, [])
     assign(:party, double(:party, name: 'Conservative', graph_id: 'jF43Jxoc'))
     assign(:letters, 'A')
@@ -12,7 +11,7 @@ RSpec.describe 'parties/members/current_members_letters', vcr: true do
 
   context 'header' do
     it 'will render the correct header' do
-      expect(rendered).to match(/Conservative - Current members/)
+      expect(rendered).to match(/Conservative - Current and former members/)
     end
   end
 
@@ -21,12 +20,8 @@ RSpec.describe 'parties/members/current_members_letters', vcr: true do
       expect(response).to render_template(partial: 'pugin/components/_navigation-letter')
     end
 
-    it 'will render pugin/cards/person-list' do
+    it 'will render pugin/cards/_person-list' do
       expect(response).to render_template(partial: 'pugin/cards/_person-list')
-    end
-
-    it 'will render dissolution message' do
-      expect(response).to render_template(partial: 'shared/_dissolution_message')
     end
   end
 end

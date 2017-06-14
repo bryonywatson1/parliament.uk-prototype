@@ -18,7 +18,7 @@ class Houses::MembersController < ApplicationController
     @current_house_id, @other_house_id = HousesHelper.house_id_string(@house)
   end
 
-  def current_members
+  def current
     house_id = params[:house_id]
 
     @house, @people, @letters = RequestHelper.filter_response_data(
@@ -36,7 +36,7 @@ class Houses::MembersController < ApplicationController
     @current_house_id, @other_house_id = HousesHelper.house_id_string(@house)
   end
 
-  def members_letters
+  def letters
     house_id = params[:house_id]
     letter = params[:letter]
 
@@ -54,7 +54,7 @@ class Houses::MembersController < ApplicationController
     @current_house_id, @other_house_id = HousesHelper.house_id_string(@house)
   end
 
-  def current_members_letters
+  def current_letters
     house_id = params[:house_id]
     letter = params[:letter]
 
@@ -72,13 +72,13 @@ class Houses::MembersController < ApplicationController
     @current_house_id, @other_house_id = HousesHelper.house_id_string(@house)
   end
 
-  def a_to_z_members
+  def a_to_z
     @house_id = params[:house_id]
 
     @letters = RequestHelper.process_available_letters(parliament_request.houses(@house_id).members.a_z_letters)
   end
 
-  def a_to_z_current_members
+  def a_to_z_current
     @house_id = params[:house_id]
 
     @letters = RequestHelper.process_available_letters(parliament_request.houses(@house_id).members.current.a_z_letters)

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'people/members/a_to_z_current_members', vcr: true do
+RSpec.describe 'people/members/a_to_z', vcr: true do
   before do
     assign(:letters, 'A')
     assign(:person_id, 'jF43Jxoc')

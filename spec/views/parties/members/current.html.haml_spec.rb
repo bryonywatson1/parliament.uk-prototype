@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'parties/members/current_members', vcr: true do
+RSpec.describe 'parties/members/current', vcr: true do
   before do
     allow(FlagHelper).to receive(:dissolution?).and_return(true)
     assign(:people, [])

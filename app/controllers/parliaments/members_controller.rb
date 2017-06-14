@@ -15,7 +15,7 @@ class Parliaments::MembersController < ApplicationController
     @letters    = @letters.map(&:value)
   end
 
-  def members_letters
+  def letters
     parliament_id = params[:parliament_id]
     letter = params[:letter]
 
@@ -31,7 +31,7 @@ class Parliaments::MembersController < ApplicationController
     @people     = @people.sort_by(:sort_name)
   end
 
-  def a_to_z_members
+  def a_to_z
     parliament_id = params[:parliament_id]
 
     @parliament, @letters = RequestHelper.filter_response_data(

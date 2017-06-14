@@ -10,7 +10,7 @@ class People::MembersController < ApplicationController
     @letters = @letters.map(&:value)
   end
 
-  def current_members
+  def current
     @people, @letters = RequestHelper.filter_response_data(
       parliament_request.people.members.current,
       'http://id.ukpds.org/schema/Person',
@@ -21,7 +21,7 @@ class People::MembersController < ApplicationController
     @letters = @letters.map(&:value)
   end
 
-  def members_letters
+  def letters
     letter = params[:letter]
 
     @people, @letters = RequestHelper.filter_response_data(
@@ -34,7 +34,7 @@ class People::MembersController < ApplicationController
     @letters = @letters.map(&:value)
   end
 
-  def current_members_letters
+  def current_letters
     letter = params[:letter]
 
     @people, @letters = RequestHelper.filter_response_data(
@@ -47,11 +47,11 @@ class People::MembersController < ApplicationController
     @letters = @letters.map(&:value)
   end
 
-  def a_to_z_members
+  def a_to_z
     @letters = RequestHelper.process_available_letters(parliament_request.people.members.a_z_letters)
   end
 
-  def a_to_z_current_members
+  def a_to_z_current
     @letters = RequestHelper.process_available_letters(parliament_request.people.members.current.a_z_letters)
   end
 

@@ -35,7 +35,6 @@ RSpec.describe 'parliaments', type: :routing do
         end
 
         context 'members' do
-          # parliaments/members#index
           it "GET parliaments/members#index" do
             expect(get: '/parliaments/KL2k1BGP/members').to route_to(
               controller:    'parliaments/members',
@@ -44,20 +43,18 @@ RSpec.describe 'parliaments', type: :routing do
             )
           end
 
-          # parliaments/members#a_to_z_members
-          it "GET parliaments/members#a_to_z_members" do
+          it "GET parliaments/members#a_to_z" do
             expect(get: '/parliaments/KL2k1BGP/members/a-z').to route_to(
               controller:    'parliaments/members',
-              action:        'a_to_z_members',
+              action:        'a_to_z',
               parliament_id: 'KL2k1BGP',
             )
           end
 
-          # parliaments#members_letters
-          it "GET parliaments/members#members_letters" do
+          it "GET parliaments/members#letters" do
             expect(get: '/parliaments/KL2k1BGP/members/a-z/a').to route_to(
               controller:    'parliaments/members',
-              action:        'members_letters',
+              action:        'letters',
               parliament_id: 'KL2k1BGP',
               letter:        'a'
             )
@@ -65,7 +62,6 @@ RSpec.describe 'parliaments', type: :routing do
         end
 
         context 'parties' do
-          # parliaments/parties#index
           it "GET parliaments/parties#index" do
             expect(get: '/parliaments/KL2k1BGP/parties').to route_to(
               controller:    'parliaments/parties',

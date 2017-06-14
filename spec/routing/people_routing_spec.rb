@@ -18,19 +18,19 @@ RSpec.describe 'people', type: :routing do
       include_examples 'collection a_to_z route with a letter', 'people', ['a-z'], 'letters', 'a'
 
       # people/members#current_members_letters
-      include_examples 'collection a_to_z route with a letter', 'people/members', ['current', 'a-z'], 'current_members_letters', 'a'
+      include_examples 'collection a_to_z route with a letter', 'people/members', ['current', 'a-z'], 'current_letters', 'a'
 
       # people/members#a_to_z_members
-      include_examples 'nested collection routes', 'people/members', ['a-z'], 'a_to_z_members'
+      include_examples 'nested collection routes', 'people/members', ['a-z'], 'a_to_z'
 
       # people/members#current_members
-      include_examples 'nested collection routes', 'people/members', ['current'], 'current_members'
+      include_examples 'nested collection routes', 'people/members', ['current'], 'current'
 
       # people/members#a_to_z_current_members
-      include_examples 'nested collection routes', 'people/members', ['current', 'a-z'], 'a_to_z_current_members'
+      include_examples 'nested collection routes', 'people/members', ['current', 'a-z'], 'a_to_z_current'
 
       # people/members#members_letters
-      include_examples 'collection a_to_z route with a letter', 'people/members', ['a-z'], 'members_letters', 'a'
+      include_examples 'collection a_to_z route with a letter', 'people/members', ['a-z'], 'letters', 'a'
 
       it 'GET people#lookup_by_letters' do
         expect(get: '/people/a').to route_to(

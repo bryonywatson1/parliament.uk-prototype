@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'houses/members/current_members_letters', vcr: true do
+RSpec.describe 'houses/members/current_letters', vcr: true do
 
   describe 'no dissolution' do
     before :each do

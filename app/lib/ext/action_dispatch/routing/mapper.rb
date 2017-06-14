@@ -35,14 +35,14 @@ module ActionDispatch
         scope '/members', as: 'members' do
           get '/', to: "#{route_name}#index"
 
-          listable("#{route_name}#a_to_z_members", "#{route_name}#members_letters")
+          listable("#{route_name}#a_to_z", "#{route_name}#letters")
 
           # /route_name/:id/members/current
           scope '/current', as: 'current' do
             if current
-              get '/', to: "#{route_name}#current_members"
+              get '/', to: "#{route_name}#current"
 
-              listable("#{route_name}#a_to_z_current_members", "#{route_name}#current_members_letters")
+              listable("#{route_name}#a_to_z_current", "#{route_name}#current_letters")
             end
           end
 

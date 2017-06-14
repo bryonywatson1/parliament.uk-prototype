@@ -95,13 +95,13 @@ en:
     members:
       index:
         title: '%{current_and_former} %{mps_and_lords}'
-      a_to_z_members:
+      a_to_z:
         title: # needs title
-      members_letters:
+      letters:
         title: '%{current_and_former} %{mps_and_lords}'
-      current_members:
+      current:
         title: '%{current} %{mps_and_lords}'
-      current_members_letters:
+      current_letters:
         title: '%{current} %{mps_and_lords}'
     show:
       mp_for: 'MP for'
@@ -194,15 +194,15 @@ en:
     members:
       index:
         title: '%{current_and_former} %{member_plural}'
-      a_to_z_members:
+      a_to_z:
         title: # needs title
-      members_letters:
+      letters:
         title: '%{current_and_former} %{member_plural}'
-      current_members:
+      current:
         title: '%{current} %{member_plural}'
-      a_to_z_current_members:
+      a_to_z_current:
         title: # needs title
-      current_members_letters:
+      current_letters:
         title: '%{current} %{member_plural}'
   # houses translations
   houses:
@@ -216,15 +216,15 @@ en:
     members:
       index:
         title: '%{current_and_former} %{member_type}'
-      a_to_z_members:
+      a_to_z:
         title: # needs title
-      members_letters:
+      letters:
         title: '%{current_and_former} %{member_type}'
-      current_members:
+      current:
         title: '%{current} %{member_type}'
-      a_to_z_current_members:
+      a_to_z_current:
         title: # needs title
-      current_members_letters:
+      current_letters:
         title: '%{current} %{member_type}'
     parties:
       index:

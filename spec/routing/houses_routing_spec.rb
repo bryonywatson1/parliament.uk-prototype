@@ -20,43 +20,43 @@ RSpec.describe 'houses', type: :routing do
           )
         end
 
-        it 'GET houses/members#a_to_z_members' do
+        it 'GET houses/members#a_to_z' do
           expect(get: '/houses/KL2k1BGP/members/a-z').to route_to(
           controller: 'houses/members',
-          action:     'a_to_z_members',
+          action:     'a_to_z',
           house_id:   'KL2k1BGP',
           )
         end
 
-        it 'GET houses/members#current_members' do
+        it 'GET houses/members#current' do
           expect(get: '/houses/KL2k1BGP/members/current').to route_to(
           controller: 'houses/members',
-          action:     'current_members',
+          action:     'current',
           house_id:   'KL2k1BGP',
           )
         end
 
-        it 'GET houses/members#a_to_z_current_members' do
+        it 'GET houses/members#a_to_z_current' do
           expect(get: '/houses/KL2k1BGP/members/current/a-z').to route_to(
           controller: 'houses/members',
-          action:     'a_to_z_current_members',
+          action:     'a_to_z_current',
           house_id:   'KL2k1BGP',
           )
         end
 
-        it 'GET houses/members#members_letters' do
+        it 'GET houses/members#letters' do
           expect(get: '/houses/KL2k1BGP/members/a-z/a').to route_to(
           controller: 'houses/members',
-          action:     'members_letters',
+          action:     'letters',
           house_id:   'KL2k1BGP',
           letter:     'a'
           )
         end
 
-        it 'GET houses/members#current_members_letters' do
+        it 'GET houses/members#current_letters' do
           expect(get: '/houses/KL2k1BGP/members/current/a-z/a').to route_to(
           controller: 'houses/members',
-          action:     'current_members_letters',
+          action:     'current_letters',
           house_id:   'KL2k1BGP',
           letter:     'a'
           )

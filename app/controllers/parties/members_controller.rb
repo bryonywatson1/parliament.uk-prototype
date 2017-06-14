@@ -14,7 +14,7 @@ class Parties::MembersController < ApplicationController
     @letters = @letters.map(&:value)
   end
 
-  def current_members
+  def current
     party_id = params[:party_id]
 
     @party, @people, @letters = RequestHelper.filter_response_data(
@@ -29,7 +29,7 @@ class Parties::MembersController < ApplicationController
     @letters = @letters.map(&:value)
   end
 
-  def members_letters
+  def letters
     letter = params[:letter]
     party_id = params[:party_id]
 
@@ -45,7 +45,7 @@ class Parties::MembersController < ApplicationController
     @letters = @letters.map(&:value)
   end
 
-  def current_members_letters
+  def current_letters
     letter = params[:letter]
     party_id = params[:party_id]
 
@@ -61,13 +61,13 @@ class Parties::MembersController < ApplicationController
     @letters = @letters.map(&:value)
   end
 
-  def a_to_z_members
+  def a_to_z
     @party_id = params[:party_id]
 
     @letters = RequestHelper.process_available_letters(parliament_request.parties(@party_id).members.a_z_letters)
   end
 
-  def a_to_z_current_members
+  def a_to_z_current
     @party_id = params[:party_id]
 
     @letters = RequestHelper.process_available_letters(parliament_request.parties(@party_id).members.current.a_z_letters)

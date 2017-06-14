@@ -30,9 +30,9 @@ RSpec.describe People::MembersController, vcr: true do
     end
   end
 
-  describe "GET current_members" do
+  describe "GET current" do
     before(:each) do
-      get :current_members
+      get :current
     end
 
     it 'should have a response with http status ok (200)' do
@@ -54,14 +54,14 @@ RSpec.describe People::MembersController, vcr: true do
     end
 
     it 'renders the current_members template' do
-      expect(response).to render_template('current_members')
+      expect(response).to render_template('current')
     end
   end
 
-  describe 'GET members_letters' do
+  describe 'GET letters' do
     context 'there is a response' do
       before(:each) do
-        get :members_letters, params: { letter: 't' }
+        get :letters, params: { letter: 't' }
       end
 
       it 'should have a response with http status ok (200)' do
@@ -83,13 +83,13 @@ RSpec.describe People::MembersController, vcr: true do
       end
 
       it 'renders the members_letters template' do
-        expect(response).to render_template('members_letters')
+        expect(response).to render_template('letters')
       end
     end
 
     context 'there is no response' do
       before(:each) do
-        get :members_letters, params: { letter: 'x' }
+        get :letters, params: { letter: 'x' }
       end
 
       it 'http status of 200' do
@@ -102,10 +102,10 @@ RSpec.describe People::MembersController, vcr: true do
     end
   end
 
-  describe "GET current_members_letters" do
+  describe "GET current_letters" do
     context 'there is a response' do
       before(:each) do
-        get :current_members_letters, params: { letter: 't' }
+        get :current_letters, params: { letter: 't' }
       end
 
       it 'should have a response with http status ok (200)' do
@@ -127,13 +127,13 @@ RSpec.describe People::MembersController, vcr: true do
       end
 
       it 'renders the current_members_letters template' do
-        expect(response).to render_template('current_members_letters')
+        expect(response).to render_template('current_letters')
       end
     end
 
     context 'there is no response' do
       before(:each) do
-        get :current_members_letters, params: { letter: 'x' }
+        get :current_letters, params: { letter: 'x' }
       end
 
       it 'should have a response with a http status of 200' do
@@ -146,9 +146,9 @@ RSpec.describe People::MembersController, vcr: true do
     end
   end
 
-  describe "GET a_to_z_members" do
+  describe "GET a_to_z" do
     before(:each) do
-      get :a_to_z_members
+      get :a_to_z
     end
 
     it 'should have a response with http status ok (200)' do
@@ -160,13 +160,13 @@ RSpec.describe People::MembersController, vcr: true do
     end
 
     it 'renders the a_to_z_members template' do
-      expect(response).to render_template('a_to_z_members')
+      expect(response).to render_template('a_to_z')
     end
   end
 
-  describe "GET a_to_z_current_members" do
+  describe "GET a_to_z_current" do
     before(:each) do
-      get :a_to_z_current_members
+      get :a_to_z_current
     end
 
     it 'should have a response with http status ok (200)' do
@@ -178,7 +178,7 @@ RSpec.describe People::MembersController, vcr: true do
     end
 
     it 'renders the a_to_z_current_members template' do
-      expect(response).to render_template('a_to_z_current_members')
+      expect(response).to render_template('a_to_z_current')
     end
   end
 

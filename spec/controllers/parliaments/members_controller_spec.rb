@@ -33,9 +33,9 @@ RSpec.describe Parliaments::MembersController, vcr: true do
     end
   end
 
-  describe 'GET members_letters' do
+  describe 'GET letters' do
     before(:each) do
-      get :members_letters, params: { parliament_id: 'GEFMX81E', letter: 'a' }
+      get :letters, params: { parliament_id: 'GEFMX81E', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -60,9 +60,9 @@ RSpec.describe Parliaments::MembersController, vcr: true do
     end
   end
 
-  describe 'GET a_to_z_members' do
+  describe 'GET a_to_z' do
     before(:each) do
-      get :a_to_z_members, params: { parliament_id: '0FxbTVtr' }
+      get :a_to_z, params: { parliament_id: '0FxbTVtr' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -77,7 +77,7 @@ RSpec.describe Parliaments::MembersController, vcr: true do
     end
 
     it 'renders the members a-z template' do
-      expect(response).to render_template('a_to_z_members')
+      expect(response).to render_template('a_to_z')
     end
   end
 end

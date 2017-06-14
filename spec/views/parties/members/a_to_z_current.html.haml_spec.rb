@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'parties/members/a_to_z_members', vcr: true do
+RSpec.describe 'parties/members/a_to_z_current', vcr: true do
   before do
     assign(:letters, 'A')
     assign(:party_id, 'jF43Jxoc')
