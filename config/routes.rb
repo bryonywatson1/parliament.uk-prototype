@@ -94,7 +94,7 @@ Rails.application.routes.draw do
     # /constituencies/:constituency_id
     scope '/:constituency_id' do
       get '/', to: 'constituencies#show', constituency_id: id_format_regex
-      get '/contact-point', to: 'constituencies/contact_points#contact_point'
+      get '/contact-point', to: 'constituencies/contact_points#index'
       get '/map', to: 'constituencies#map'
 
       # /constituencies/:constituency_id/members

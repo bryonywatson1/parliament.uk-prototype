@@ -166,7 +166,7 @@ en:
     map:
       title: # title does not require translation
     contact_points:
-      contact_point:
+      index:
         title: # title does not require translation
     shared_translations:
       vacant: 'Vacant'
