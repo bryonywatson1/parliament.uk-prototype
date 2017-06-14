@@ -145,7 +145,7 @@ Rails.application.routes.draw do
 
           # /houses/:house_id/parties/:party_id/members
           scope '/members', as: 'members' do
-            get '/', to: 'houses/parties/members#party_members'
+            get '/', to: 'houses/parties/members#index'
 
             listable('houses/parties/members#a_to_z_party_members', 'houses/parties/members#party_members_letters')
 

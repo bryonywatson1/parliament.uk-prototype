@@ -235,7 +235,7 @@ en:
         title: # title does not require translation
         house_no_current_party_members: 'There are currently no members of this party in this House.'
       members:
-        party_members:
+        index:
           title: '%{current_and_former} %{member_type}'
         a_to_z_party_members:
           title: # needs title
