@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe People::ContactPointsController, vcr: true do
-  describe "GET contact_points" do
+  describe "GET index" do
     before(:each) do
-      get :contact_points, params: { person_id: '7TX8ySd4' }
+      get :index, params: { person_id: '7TX8ySd4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -20,7 +20,7 @@ RSpec.describe People::ContactPointsController, vcr: true do
     end
 
     it 'renders the contact_points template' do
-      expect(response).to render_template('contact_points')
+      expect(response).to render_template('index')
     end
   end
 end

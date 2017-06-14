@@ -3,7 +3,7 @@ class Constituencies::ContactPointsController < ApplicationController
   # @controller_action_param :constituency_id [String] 8 character identifier that identifies constituency in graph database.
   # @return [Grom::Node] object with type 'http://id.ukpds.org/schema/ConstituencyGroup' which has a contact point.
 
-  def contact_point
+  def index
     constituency_id = params[:constituency_id]
 
     @constituency = RequestHelper.filter_response_data(

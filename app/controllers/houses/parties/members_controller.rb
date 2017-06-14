@@ -1,5 +1,5 @@
 class Houses::Parties::MembersController < ApplicationController
-  def party_members
+  def index
     house_id = params[:house_id]
     party_id = params[:party_id]
 

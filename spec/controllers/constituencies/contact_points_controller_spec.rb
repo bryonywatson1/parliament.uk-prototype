@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Constituencies::ContactPointsController, vcr: true do
 
-  describe 'GET contact_point' do
+  describe 'GET index' do
     before(:each) do
-      get :contact_point, params: { constituency_id: 'MtbjxRrE' }
+      get :index, params: { constituency_id: 'MtbjxRrE' }
     end
 
     it 'should have a response with a http status ok (200)' do
@@ -17,7 +17,7 @@ RSpec.describe Constituencies::ContactPointsController, vcr: true do
     end
 
     it 'renders the contact_point template' do
-      expect(response).to render_template('contact_point')
+      expect(response).to render_template('index')
     end
   end
 

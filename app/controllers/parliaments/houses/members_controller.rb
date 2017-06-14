@@ -1,6 +1,6 @@
 class Parliaments::Houses::MembersController < ApplicationController
 
-  def house_members
+  def index
     parliament_id = params[:parliament_id]
     house_id      = params[:house_id]
 
