@@ -228,8 +228,6 @@ RSpec.describe 'parliaments', type: :routing do
         end
 
         context 'constituencies' do
-          # parliaments/constituencies#index
-          #include_examples 'nested routes with an id', 'parliaments/constituencies', 'KL2k1BGP', ['constituencies'], 'constituencies'
           it 'GET parliaments/constituencies#index' do
             expect(get: '/parliaments/12345678/constituencies').to route_to(
               controller:    'parliaments/constituencies',
@@ -237,21 +235,18 @@ RSpec.describe 'parliaments', type: :routing do
               parliament_id: '12345678'
             )
           end
-          # parliaments/constituencies#a_to_z_constituencies
-          it 'GET parliaments/constituencies#a_to_z_constituencies' do
+          it 'GET parliaments/constituencies#a_to_z' do
             expect(get: '/parliaments/12345678/constituencies/a-z').to route_to(
               controller:    'parliaments/constituencies',
-              action:        'a_to_z_constituencies',
+              action:        'a_to_z',
               parliament_id: '12345678'
             )
           end
 
-          # parliaments/constituencies#constituencies_letters
-          #include_examples 'a_to_z route with an id and letter', 'parliaments/constituencies', 'KL2k1BGP', %w(constituencies a-z), 'constituencies_letters', 'a'
-          it 'GET parliaments/constituencies#constituencies_letters' do
+          it 'GET parliaments/constituencies#letters' do
             expect(get: '/parliaments/12345678/constituencies/a-z/a').to route_to(
               controller:    'parliaments/constituencies',
-              action:        'constituencies_letters',
+              action:        'letters',
               parliament_id: '12345678',
               letter:         'a'
             )

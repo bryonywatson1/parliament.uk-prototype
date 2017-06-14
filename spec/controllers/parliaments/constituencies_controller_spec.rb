@@ -31,9 +31,9 @@ RSpec.describe Parliaments::ConstituenciesController, vcr: true do
     end
   end
 
-  describe 'GET a_to_z_constituencies' do
+  describe 'GET a_to_z' do
     before(:each) do
-      get :a_to_z_constituencies, params: { parliament_id: '0FxbTVtr' }
+      get :a_to_z, params: { parliament_id: '0FxbTVtr' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -57,13 +57,13 @@ RSpec.describe Parliaments::ConstituenciesController, vcr: true do
     end
 
     it 'renders the constituencies template' do
-      expect(response).to render_template('a_to_z_constituencies')
+      expect(response).to render_template('a_to_z')
     end
   end
 
-  describe 'GET constituencies_letters' do
+  describe 'GET letters' do
     before(:each) do
-      get :constituencies_letters, params: { parliament_id: '0FxbTVtr', letter: 'a' }
+      get :letters, params: { parliament_id: '0FxbTVtr', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do

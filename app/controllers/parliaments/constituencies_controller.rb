@@ -15,7 +15,7 @@ class Parliaments::ConstituenciesController < ApplicationController
     @letters        = @letters.map(&:value)
   end
 
-  def a_to_z_constituencies
+  def a_to_z
     parliament_id = params[:parliament_id]
 
     @parliament, @constituencies, @letters = RequestHelper.filter_response_data(
@@ -30,7 +30,7 @@ class Parliaments::ConstituenciesController < ApplicationController
     @letters        = @letters.map(&:value)
   end
 
-  def constituencies_letters
+  def letters
     parliament_id = params[:parliament_id]
     letter        = params[:letter]
 
