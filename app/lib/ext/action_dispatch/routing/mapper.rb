@@ -33,7 +33,7 @@ module ActionDispatch
 
       def build_members_routes(route_name, current: true)
         scope '/members', as: 'members' do
-          get '/', to: "#{route_name}#members"
+          get '/', to: "#{route_name}#index"
 
           listable("#{route_name}#a_to_z_members", "#{route_name}#members_letters")
 

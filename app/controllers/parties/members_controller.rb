@@ -1,5 +1,5 @@
 class Parties::MembersController < ApplicationController
-  def members
+  def index
     party_id = params[:party_id]
 
     @party, @people, @letters = RequestHelper.filter_response_data(

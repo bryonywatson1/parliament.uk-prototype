@@ -93,7 +93,7 @@ en:
     lookup_by_letters:
       title: '%{current_and_former} %{mps_and_lords}'
     members:
-      members:
+      index:
         title: '%{current_and_former} %{mps_and_lords}'
       a_to_z_members:
         title: # needs title
@@ -192,7 +192,7 @@ en:
       title: # title does not require translation
       party_no_current_members: 'There are no MPs or Lords in this party.'
     members:
-      members:
+      index:
         title: '%{current_and_former} %{member_plural}'
       a_to_z_members:
         title: # needs title
@@ -214,7 +214,7 @@ en:
       title: # title does not require translation
       area_they_represent: 'by the area they represent'
     members:
-      members:
+      index:
         title: '%{current_and_former} %{member_type}'
       a_to_z_members:
         title: # needs title

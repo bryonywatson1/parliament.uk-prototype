@@ -1,6 +1,6 @@
 class Houses::MembersController < ApplicationController
 
-  def members
+  def index
     house_id = params[:house_id]
 
     @house, @people, @letters = RequestHelper.filter_response_data(

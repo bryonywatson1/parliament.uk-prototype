@@ -12,10 +12,10 @@ RSpec.describe 'houses', type: :routing do
       include_examples 'nested routes with an id', 'houses', 'KL2k1BGP', [], 'show'
 
       context 'members' do
-        it 'GET houses/members#members' do
+        it 'GET houses/members#index' do
           expect(get: '/houses/KL2k1BGP/members').to route_to(
           controller: 'houses/members',
-          action:     'members',
+          action:     'index',
           house_id:   'KL2k1BGP',
           )
         end

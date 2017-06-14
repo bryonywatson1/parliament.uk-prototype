@@ -35,17 +35,17 @@ RSpec.describe 'parliaments', type: :routing do
         end
 
         context 'members' do
-          # parliaments/members#members
-          it "GET parliaments/members#members" do
+          # parliaments/members#index
+          it "GET parliaments/members#index" do
             expect(get: '/parliaments/KL2k1BGP/members').to route_to(
               controller:    'parliaments/members',
-              action:        'members',
+              action:        'index',
               parliament_id: 'KL2k1BGP',
             )
           end
 
           # parliaments/members#a_to_z_members
-          it "GET parliaments/members#members" do
+          it "GET parliaments/members#a_to_z_members" do
             expect(get: '/parliaments/KL2k1BGP/members/a-z').to route_to(
               controller:    'parliaments/members',
               action:        'a_to_z_members',

@@ -1,7 +1,7 @@
 class People::MembersController < ApplicationController
 
-  
-  def members
+
+  def index
     @people, @letters = RequestHelper.filter_response_data(
       parliament_request.people.members,
       'http://id.ukpds.org/schema/Person',

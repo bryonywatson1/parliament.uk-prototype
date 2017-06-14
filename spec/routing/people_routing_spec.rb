@@ -40,10 +40,10 @@ RSpec.describe 'people', type: :routing do
         )
       end
 
-      it 'GET people/members#members' do
+      it 'GET people/members#index' do
         expect(get: '/people/members').to route_to(
           controller: 'people/members',
-          action:     'members'
+          action:     'index'
         )
       end
     end

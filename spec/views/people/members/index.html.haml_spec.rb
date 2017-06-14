@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'people/members/members', vcr: true do
+RSpec.describe 'people/members/index', vcr: true do
   before do
     assign(:people, [])
     assign(:letters, 'A')

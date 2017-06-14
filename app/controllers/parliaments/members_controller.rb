@@ -1,6 +1,6 @@
 class Parliaments::MembersController < ApplicationController
 
-  def members
+  def index
     parliament_id = params[:parliament_id]
 
     @parliament, @people, @letters = RequestHelper.filter_response_data(

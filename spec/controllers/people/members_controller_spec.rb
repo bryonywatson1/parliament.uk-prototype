@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe People::MembersController, vcr: true do
 
-  describe "GET members" do
+  describe "GET index" do
     before(:each) do
-      get :members
+      get :index
     end
 
     it 'should have a response with http status ok (200)' do
@@ -26,7 +26,7 @@ RSpec.describe People::MembersController, vcr: true do
     end
 
     it 'renders the members template' do
-      expect(response).to render_template('members')
+      expect(response).to render_template('index')
     end
   end
 

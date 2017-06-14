@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'parties/members/members', vcr: true do
+RSpec.describe 'parties/members/index', vcr: true do
   before do
     assign(:people, [])
     assign(:party, double(:party, name: 'Conservative', graph_id: 'jF43Jxoc'))

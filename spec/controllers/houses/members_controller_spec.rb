@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Houses::MembersController, vcr: true do
 
-  describe "GET members" do
+  describe "GET index" do
     context 'when the house of commons' do
       before(:each) do
-        get :members, params: { house_id: 'cqIATgUK' }
+        get :index, params: { house_id: 'cqIATgUK' }
       end
 
       it 'should have a response with http status ok (200)' do
@@ -30,13 +30,13 @@ RSpec.describe Houses::MembersController, vcr: true do
       end
 
       it 'renders the members template' do
-        expect(response).to render_template('members')
+        expect(response).to render_template('index')
       end
     end
 
     context 'when the house of lords' do
       before(:each) do
-        get :members, params: { house_id: 'mG2ur5TF' }
+        get :index, params: { house_id: 'mG2ur5TF' }
       end
 
       it 'assigns @current_person_type correctly' do

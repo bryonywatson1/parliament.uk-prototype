@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Parties::MembersController, vcr: true do
 
-  describe 'GET members' do
+  describe 'GET index' do
     before(:each) do
-      get :members, params: { party_id: 'lk3RZ8EB' }
+      get :index, params: { party_id: 'lk3RZ8EB' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -28,7 +28,7 @@ RSpec.describe Parties::MembersController, vcr: true do
     end
 
     it 'renders the members template' do
-      expect(response).to render_template('members')
+      expect(response).to render_template('index')
     end
   end
 
@@ -161,7 +161,7 @@ RSpec.describe Parties::MembersController, vcr: true do
   # Test for ApplicationController Parliament::NoContentResponseError handling
   describe 'rescue_from Parliament::ClientError' do
     it 'raises an ActionController::RoutingError' do
-      expect{ get :members, params: { party_id: '12345678' } }.to raise_error(ActionController::RoutingError)
+      expect{ get :index, params: { party_id: '12345678' } }.to raise_error(ActionController::RoutingError)
     end
   end
 
