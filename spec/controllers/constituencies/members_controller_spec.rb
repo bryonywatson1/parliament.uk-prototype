@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Constituencies::MembersController, vcr: true do
 
-  describe 'GET members' do
+  describe 'GET index' do
     before(:each) do
-      get :members, params: { constituency_id: 'vTNSMo38' }
+      get :index, params: { constituency_id: 'vTNSMo38' }
     end
 
     it 'should have a response with a http status ok (200)' do
@@ -34,7 +34,7 @@ RSpec.describe Constituencies::MembersController, vcr: true do
     end
 
     it 'renders the members template' do
-      expect(response).to render_template('members')
+      expect(response).to render_template('index')
     end
   end
 

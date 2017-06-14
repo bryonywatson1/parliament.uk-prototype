@@ -26,7 +26,7 @@ module ActionDispatch
 
       def build_root_and_current_routes(parent_route_name, route_name)
         scope "/#{route_name}", as: route_name do
-          get '/',        to: "#{parent_route_name}##{route_name}"
+          get '/',        to: "#{parent_route_name}#index"
           get '/current', to: "#{parent_route_name}#current_#{route_name.singularize}"
         end
       end

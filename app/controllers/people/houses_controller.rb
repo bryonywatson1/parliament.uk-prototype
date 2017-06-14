@@ -1,6 +1,6 @@
 class People::HousesController < ApplicationController
 
-  def houses
+  def index
     person_id = params[:person_id]
 
     @person, @incumbencies = RequestHelper.filter_response_data(

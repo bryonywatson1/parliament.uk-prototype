@@ -1,6 +1,6 @@
 class Constituencies::MembersController < ApplicationController
 
-  def members
+  def index
     constituency_id = params[:constituency_id]
 
     @constituency, @seat_incumbencies = RequestHelper.filter_response_data(

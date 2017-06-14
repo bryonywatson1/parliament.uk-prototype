@@ -41,11 +41,11 @@ RSpec.describe 'constituencies', type: :routing do
       # constituencies#map
       include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', ['map'], 'map'
 
-      # constituencies/members#members
-      it 'GET constituencies/members#members' do
+      # constituencies/members#index
+      it 'GET constituencies/members#index' do
         expect(get: '/constituencies/MtbjxRrE/members').to route_to(
           controller:         'constituencies/members',
-          action:             'members',
+          action:             'index',
           constituency_id:    'MtbjxRrE'
         )
       end

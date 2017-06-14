@@ -113,19 +113,19 @@ en:
       correct_mp: '%{name} is the MP for the postcode entered.'
       incorrect_mp: '%{name} is not the MP for the postcode entered.  Your MP is '
     constituencies:
-      constituencies:
+      index:
         title: '%{current_and_former} %{constituency_plural}'
       current_constituency:
         title: '%{current} %{constituency}'
     contact_points:
       contact_points:
     houses:
-      houses:
+      index:
         title: '%{current_and_former} %{house_plural}'
       current_house:
         title: '%{current} %{house}'
     parties:
-      parties:
+      index:
         title: '%{current_and_former} %{parties_and_groups}'
       current_party:
         title: '%{current} %{party}'
@@ -157,7 +157,7 @@ en:
     show:
       title: # title does not require translation
     members:
-      members:
+      index:
         title: '%{current_and_former} %{mp_plural}'
       current_member:
         title:  '%{current} %{mp}'

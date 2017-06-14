@@ -1,6 +1,6 @@
 class People::PartiesController < ApplicationController
 
-  def parties
+  def index
     person_id = params[:person_id]
 
     @person, @party_memberships = RequestHelper.filter_response_data(

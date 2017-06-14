@@ -53,11 +53,11 @@ RSpec.describe 'people', type: :routing do
       include_examples 'nested routes with an id', 'people', 'B4qvo8kI', [], 'show'
 
       context 'constituencies' do
-        # people/person_id/constituencies#constituencies
+        # people/person_id/constituencies#index
         it 'GET people/:person_id/constituencies' do
           expect(get: '/people/B4qvo8kI/constituencies').to route_to(
             controller: 'people/constituencies',
-            action:     'constituencies',
+            action:     'index',
             person_id:    'B4qvo8kI'
           )
         end
@@ -86,11 +86,11 @@ RSpec.describe 'people', type: :routing do
 
       context 'houses' do
 
-        # people/person_id/houses#houses
+        # people/person_id/houses#index
         it 'GET people/:person_id/houses' do
           expect(get: '/people/B4qvo8kI/houses').to route_to(
             controller: 'people/houses',
-            action:     'houses',
+            action:     'index',
             person_id:    'B4qvo8kI'
           )
         end
@@ -108,11 +108,11 @@ RSpec.describe 'people', type: :routing do
 
       context 'parties' do
 
-        # people/person_id/parties#parties
+        # people/person_id/parties#index
         it 'GET people/:person_id/parties' do
           expect(get: '/people/B4qvo8kI/parties').to route_to(
             controller: 'people/parties',
-            action:     'parties',
+            action:     'index',
             person_id:    'B4qvo8kI'
           )
         end
