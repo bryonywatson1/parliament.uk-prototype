@@ -238,7 +238,7 @@ Rails.application.routes.draw do
             # /parliaments/:parliament_id/parties/:party_id/members
             get '/', to: 'parliaments/parties/members#index'
 
-            listable('parliaments/parties/members#a_to_z_party_members', 'parliaments/parties/members#party_members_letters')
+            listable('parliaments/parties/members#a_to_z', 'parliaments/parties/members#letters')
           end
         end
       end

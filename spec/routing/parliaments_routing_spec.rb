@@ -93,21 +93,19 @@ RSpec.describe 'parliaments', type: :routing do
               )
             end
 
-            # parliaments/parties/members#a_to_z_party_members
-            it "GET parliaments/parties#a_to_z_party_members" do
+            it "GET parliaments/parties#a_to_z" do
               expect(get: '/parliaments/KL2k1BGP/parties/12341234/members/a-z').to route_to(
                 controller:    'parliaments/parties/members',
-                action:        'a_to_z_party_members',
+                action:        'a_to_z',
                 parliament_id: 'KL2k1BGP',
                 party_id:      '12341234',
               )
             end
 
-            # parliaments/parties/members#party_members_letters
-            it "GET parliaments/parties#party_members_letters" do
+            it "GET parliaments/parties#letters" do
               expect(get: '/parliaments/KL2k1BGP/parties/12341234/members/a-z/a').to route_to(
                 controller:    'parliaments/parties/members',
-                action:        'party_members_letters',
+                action:        'letters',
                 parliament_id: 'KL2k1BGP',
                 party_id:      '12341234',
                 letter:        'a'

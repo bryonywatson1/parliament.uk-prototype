@@ -44,9 +44,9 @@ RSpec.describe Parliaments::Parties::MembersController, vcr: true do
     end
   end
 
-  describe 'GET a_to_z_party_members' do
+  describe 'GET a_to_z' do
     before(:each) do
-      get :a_to_z_party_members, params: { parliament_id: '0FxbTVtr', party_id: 'P6LNyUn4' }
+      get :a_to_z, params: { parliament_id: '0FxbTVtr', party_id: 'P6LNyUn4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -74,13 +74,13 @@ RSpec.describe Parliaments::Parties::MembersController, vcr: true do
     end
 
     it 'renders the a_to_z_party_members template' do
-      expect(response).to render_template('a_to_z_party_members')
+      expect(response).to render_template('a_to_z')
     end
   end
 
-  describe 'GET party_members_letters' do
+  describe 'GET letters' do
     before(:each) do
-      get :party_members_letters, params: { parliament_id: 'GEFMX81E', party_id: 'lk3RZ8EB', letter: 'a' }
+      get :letters, params: { parliament_id: 'GEFMX81E', party_id: 'lk3RZ8EB', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do
