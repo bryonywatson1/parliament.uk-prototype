@@ -30,7 +30,7 @@ class Houses::PartiesController < ApplicationController
     raise ActionController::RoutingError, 'Invalid party id' if @party.nil?
   end
 
-  def current_parties
+  def current
     house_id = params[:house_id]
 
     @house, @parties = RequestHelper.filter_response_data(

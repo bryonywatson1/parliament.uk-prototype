@@ -17,7 +17,7 @@ class Houses::Parties::MembersController < ApplicationController
     @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
   end
 
-  def party_members_letters
+  def letters
     house_id = params[:house_id]
     party_id = params[:party_id]
     letter = params[:letter]
@@ -36,7 +36,7 @@ class Houses::Parties::MembersController < ApplicationController
     @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
   end
 
-  def current_party_members
+  def current
     house_id = params[:house_id]
     party_id = params[:party_id]
 
@@ -55,7 +55,7 @@ class Houses::Parties::MembersController < ApplicationController
     @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
   end
 
-  def current_party_members_letters
+  def current_letters
     house_id = params[:house_id]
     party_id = params[:party_id]
     letter = params[:letter]
@@ -75,14 +75,14 @@ class Houses::Parties::MembersController < ApplicationController
     @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
   end
 
-  def a_to_z_party_members
+  def a_to_z
     @house_id = params[:house_id]
     @party_id = params[:party_id]
 
     @letters = RequestHelper.process_available_letters(parliament_request.houses(@house_id).parties(@party_id).members.a_z_letters)
   end
 
-  def a_to_z_current_party_members
+  def a_to_z_current
     @house_id = params[:house_id]
     @party_id = params[:party_id]
 

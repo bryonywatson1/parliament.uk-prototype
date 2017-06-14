@@ -72,10 +72,10 @@ RSpec.describe 'houses', type: :routing do
           )
         end
 
-        it 'GET houses/parties#current_parties' do
+        it 'GET houses/parties#current' do
           expect(get: '/houses/KL2k1BGP/parties/current').to route_to(
           controller: 'houses/parties',
-          action:     'current_parties',
+          action:     'current',
           house_id:   'KL2k1BGP',
           )
         end
@@ -100,47 +100,47 @@ RSpec.describe 'houses', type: :routing do
           )
         end
 
-        it 'GET houses/parties/members#a_to_z_party_members' do
+        it 'GET houses/parties/members#a_to_z' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc/members/a-z').to route_to(
           controller: 'houses/parties/members',
-          action:     'a_to_z_party_members',
+          action:     'a_to_z',
           house_id:   'KL2k1BGP',
           party_id:   'jF43Jxoc'
           )
         end
 
-        it 'GET houses/parties/members#party_members_letters' do
+        it 'GET houses/parties/members#letters' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc/members/a-z/a').to route_to(
           controller: 'houses/parties/members',
-          action:     'party_members_letters',
+          action:     'letters',
           house_id:   'KL2k1BGP',
           party_id:   'jF43Jxoc',
           letter:     'a'
           )
         end
 
-        it 'GET houses/parties/members#current_party_members' do
+        it 'GET houses/parties/members#current' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc/members/current').to route_to(
           controller: 'houses/parties/members',
-          action:     'current_party_members',
+          action:     'current',
           house_id:   'KL2k1BGP',
           party_id:   'jF43Jxoc'
           )
         end
 
-        it 'GET houses/parties/members#a_to_z_current_party_members' do
+        it 'GET houses/parties/members#a_to_z_current' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc/members/current/a-z').to route_to(
           controller: 'houses/parties/members',
-          action:     'a_to_z_current_party_members',
+          action:     'a_to_z_current',
           house_id:   'KL2k1BGP',
           party_id:   'jF43Jxoc'
           )
         end
 
-        it 'GET houses/parties/members#a_to_z_current_party_members' do
+        it 'GET houses/parties/members#current_letters' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc/members/current/a-z/a').to route_to(
           controller: 'houses/parties/members',
-          action:     'current_party_members_letters',
+          action:     'current_letters',
           house_id:   'KL2k1BGP',
           party_id:   'jF43Jxoc',
           letter:     'a'

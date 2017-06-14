@@ -31,9 +31,9 @@ RSpec.describe Houses::PartiesController, vcr: true do
     end
   end
 
-  describe "GET current_parties" do
+  describe "GET current" do
     before(:each) do
-      get :current_parties, params: { house_id: 'm1EgVTLj' }
+      get :current, params: { house_id: 'm1EgVTLj' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -59,7 +59,7 @@ RSpec.describe Houses::PartiesController, vcr: true do
     end
 
     it 'renders the current_parties template' do
-      expect(response).to render_template('current_parties')
+      expect(response).to render_template('current')
     end
   end
 
