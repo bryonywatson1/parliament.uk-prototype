@@ -44,9 +44,9 @@ RSpec.describe Parliaments::Houses::MembersController, vcr: true do
     end
   end
 
-  describe 'GET a_to_z_house_members' do
+  describe 'GET a_to_z' do
     before(:each) do
-      get :a_to_z_house_members, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK' }
+      get :a_to_z, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -74,13 +74,13 @@ RSpec.describe Parliaments::Houses::MembersController, vcr: true do
     end
 
     it 'renders the house a-z template' do
-      expect(response).to render_template('a_to_z_house_members')
+      expect(response).to render_template('a_to_z')
     end
   end
 
-  describe 'GET house_members_letters' do
+  describe 'GET letters' do
     before(:each) do
-      get :house_members_letters, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK', letter: 'a' }
+      get :letters, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -122,7 +122,7 @@ RSpec.describe Parliaments::Houses::MembersController, vcr: true do
     end
 
     it 'renders the house template' do
-      expect(response).to render_template('house_members_letters')
+      expect(response).to render_template('letters')
     end
   end
 end

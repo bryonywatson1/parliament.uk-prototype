@@ -200,7 +200,7 @@ Rails.application.routes.draw do
             # /parliaments/:parliament_id/houses/:house_id/members
             get '/', to: 'parliaments/houses/members#index'
 
-            listable('parliaments/houses/members#a_to_z_house_members', 'parliaments/houses/members#house_members_letters')
+            listable('parliaments/houses/members#a_to_z', 'parliaments/houses/members#letters')
           end
 
           scope '/parties', as: 'parties' do
