@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'houses/parties/parties', vcr: true do
+RSpec.describe 'houses/parties/index', vcr: true do
   before do
     assign(:house, double(:house, name: 'House of Commons', graph_id: 'cqIATgUK'))
     @parties = [double(:party, name: 'Conservative', graph_id: 'jF43Jxoc', member_count: 10)]

@@ -227,11 +227,11 @@ en:
       current_members_letters:
         title: '%{current} %{member_type}'
     parties:
-      parties:
+      index:
         title: '%{current_and_former} %{parties_and_groups}'
       current_parties:
         title: '%{current} %{parties_and_groups}'
-      party:
+      show:
         title: # title does not require translation
         house_no_current_party_members: 'There are currently no members of this party in this House.'
       members:

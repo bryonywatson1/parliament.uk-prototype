@@ -136,12 +136,12 @@ Rails.application.routes.draw do
 
       # /houses/:house_id/parties
       scope '/parties', as: 'parties' do
-        get '/', to: 'houses/parties#parties'
+        get '/', to: 'houses/parties#index'
         get '/current', to: 'houses/parties#current_parties'
 
         # /houses/:house_id/parties/:party_id
         scope '/:party_id', as: 'party' do
-          get '/', to: 'houses/parties#party'
+          get '/', to: 'houses/parties#show'
 
           # /houses/:house_id/parties/:party_id/members
           scope '/members', as: 'members' do

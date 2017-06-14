@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Houses::PartiesController, vcr: true do
 
-  describe "GET parties" do
+  describe "GET index" do
     before(:each) do
-      get :parties, params: { house_id: 'KL2k1BGP' }
+      get :index, params: { house_id: 'KL2k1BGP' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -27,7 +27,7 @@ RSpec.describe Houses::PartiesController, vcr: true do
     end
 
     it 'renders the parties template' do
-      expect(response).to render_template('parties')
+      expect(response).to render_template('index')
     end
   end
 
@@ -63,10 +63,10 @@ RSpec.describe Houses::PartiesController, vcr: true do
     end
   end
 
-  describe "GET party" do
+  describe "GET show" do
     context 'both house and party have a valid id' do
       before(:each) do
-        get :party, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4' }
+        get :show, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4' }
       end
 
       it 'should have a response with http status ok (200)' do
@@ -81,7 +81,7 @@ RSpec.describe Houses::PartiesController, vcr: true do
       end
 
       it 'renders the party template' do
-        expect(response).to render_template('party')
+        expect(response).to render_template('show')
       end
     end
 
@@ -90,7 +90,7 @@ RSpec.describe Houses::PartiesController, vcr: true do
         house_id = 'KL2k1BGP'
         party_id = 'P6LNyUn5'
 
-        expect{ get :party, params: { house_id: house_id, party_id: party_id } }.to raise_error(ActionController::RoutingError, 'Invalid party id')
+        expect{ get :show, params: { house_id: house_id, party_id: party_id } }.to raise_error(ActionController::RoutingError, 'Invalid party id')
       end
     end
   end

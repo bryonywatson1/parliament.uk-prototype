@@ -64,10 +64,10 @@ RSpec.describe 'houses', type: :routing do
       end
 
       context 'parties' do
-        it 'GET houses/parties#parties' do
+        it 'GET houses/parties#index' do
           expect(get: '/houses/KL2k1BGP/parties').to route_to(
           controller: 'houses/parties',
-          action:     'parties',
+          action:     'index',
           house_id:   'KL2k1BGP',
           )
         end
@@ -80,10 +80,10 @@ RSpec.describe 'houses', type: :routing do
           )
         end
 
-        it 'GET houses#party' do
+        it 'GET houses#show' do
           expect(get: '/houses/KL2k1BGP/parties/jF43Jxoc').to route_to(
           controller: 'houses/parties',
-          action:     'party',
+          action:     'show',
           house_id:   'KL2k1BGP',
           party_id:   'jF43Jxoc'
           )
