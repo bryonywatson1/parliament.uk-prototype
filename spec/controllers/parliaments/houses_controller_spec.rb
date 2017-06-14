@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Parliaments::HousesController, vcr: true do
 
-  describe 'GET houses' do
+  describe 'GET index' do
     before(:each) do
-      get :houses, params: { parliament_id: '0FxbTVtr' }
+      get :index, params: { parliament_id: '0FxbTVtr' }
     end
 
     it 'should have a response with http status ok (200)'do
@@ -28,21 +28,21 @@ RSpec.describe Parliaments::HousesController, vcr: true do
     end
 
     it 'renders the houses template' do
-      expect(response).to render_template('houses')
+      expect(response).to render_template('index')
     end
   end
 
-  describe 'GET house' do
+  describe 'GET show' do
     context '@house is nil' do
       # updated VCR cassette in order to set @house to nil
       it 'should raise ActionController::RoutingError' do
-        expect{get :house, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK' }}.to raise_error(ActionController::RoutingError)
+        expect{get :show, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK' }}.to raise_error(ActionController::RoutingError)
       end
     end
 
     context '@house is not nil' do
       before(:each) do
-        get :house, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK' }
+        get :show, params: { parliament_id: '0FxbTVtr', house_id: 'cqIATgUK' }
       end
 
       context '@parliament' do
@@ -60,7 +60,7 @@ RSpec.describe Parliaments::HousesController, vcr: true do
       end
 
       it 'renders the house template' do
-        expect(response).to render_template('house')
+        expect(response).to render_template('show')
       end
     end
   end

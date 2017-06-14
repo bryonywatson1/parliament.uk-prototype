@@ -65,21 +65,21 @@ RSpec.describe 'parliaments', type: :routing do
         end
 
         context 'parties' do
-          # parliaments/parties#parties
-          it "GET parliaments/parties#parties" do
+          # parliaments/parties#index
+          it "GET parliaments/parties#index" do
             expect(get: '/parliaments/KL2k1BGP/parties').to route_to(
               controller:    'parliaments/parties',
-              action:        'parties',
+              action:        'index',
               parliament_id: 'KL2k1BGP'
             )
           end
 
           context 'party' do
-            # parliaments/parties#party
-            it "GET parliaments/parties#party" do
+            # parliaments/parties#show
+            it "GET parliaments/parties#show" do
               expect(get: '/parliaments/KL2k1BGP/parties/12341234').to route_to(
                 controller:    'parliaments/parties',
-                action:        'party',
+                action:        'show',
                 parliament_id: 'KL2k1BGP',
                 party_id:      '12341234'
               )
@@ -87,11 +87,11 @@ RSpec.describe 'parliaments', type: :routing do
           end
 
           context 'members' do
-            # parliaments/parties/members#party_members
-            it "GET parliaments/parties/members#party_members" do
+            # parliaments/parties/members#index
+            it "GET parliaments/parties/members#index" do
               expect(get: '/parliaments/KL2k1BGP/parties/12341234/members').to route_to(
                 controller:    'parliaments/parties/members',
-                action:        'party_members',
+                action:        'index',
                 parliament_id: 'KL2k1BGP',
                 party_id:      '12341234'
               )
@@ -121,21 +121,21 @@ RSpec.describe 'parliaments', type: :routing do
         end
 
         context 'houses' do
-          # parliaments/houses#houses
-          it 'GET parliaments/houses#houses' do
+          # parliaments/houses#index
+          it 'GET parliaments/houses#index' do
             expect(get: '/parliaments/KL2k1BGP/houses').to route_to(
               controller:    'parliaments/houses',
-              action:        'houses',
+              action:        'index',
               parliament_id: 'KL2k1BGP'
             )
           end
 
           context 'house' do
-            # parliaments/houses#house
-            it 'GET parliaments/houses#house' do
+            # parliaments/houses#show
+            it 'GET parliaments/houses#show' do
               expect(get: '/parliaments/KL2k1BGP/houses/12341234').to route_to(
                 controller:    'parliaments/houses',
-                action:        'house',
+                action:        'show',
                 parliament_id: 'KL2k1BGP',
                 house_id:      '12341234'
               )
@@ -237,12 +237,12 @@ RSpec.describe 'parliaments', type: :routing do
         end
 
         context 'constituencies' do
-          # parliaments/constituencies#constituencies
+          # parliaments/constituencies#index
           #include_examples 'nested routes with an id', 'parliaments/constituencies', 'KL2k1BGP', ['constituencies'], 'constituencies'
-          it 'GET parliaments/constituencies#constituencies' do
+          it 'GET parliaments/constituencies#index' do
             expect(get: '/parliaments/12345678/constituencies').to route_to(
               controller:    'parliaments/constituencies',
-              action:        'constituencies',
+              action:        'index',
               parliament_id: '12345678'
             )
           end
