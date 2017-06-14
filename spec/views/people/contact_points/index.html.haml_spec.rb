@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'people/contact_points/contact_points', vcr: true do
+RSpec.describe 'people/contact_points/index', vcr: true do
   before do
     assign(:person, double(:person, display_name: 'Test Name'))
     assign(:contact_points, [double(:contact_point, email: 'testemail@test.com', phone_number: '07700000000', fax_number: '01230000000', postal_addresses: [double(:postal_address, full_address: 'Test Address')], graph_id: '8ONg5lY6')])

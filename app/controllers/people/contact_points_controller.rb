@@ -1,5 +1,5 @@
 class People::ContactPointsController < ApplicationController
-  def contact_points
+  def index
     person_id = params[:person_id]
 
     @person, @contact_points = RequestHelper.filter_response_data(
