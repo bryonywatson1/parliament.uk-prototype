@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Parliaments::ConstituenciesController, vcr: true do
-  describe 'GET constituencies' do
+  describe 'GET index' do
     before(:each) do
-      get :constituencies, params: { parliament_id: '0FxbTVtr' }
+      get :index, params: { parliament_id: '0FxbTVtr' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -27,7 +27,7 @@ RSpec.describe Parliaments::ConstituenciesController, vcr: true do
     end
 
     it 'renders the constituencies template' do
-      expect(response).to render_template('constituencies')
+      expect(response).to render_template('index')
     end
   end
 

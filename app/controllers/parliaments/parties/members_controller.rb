@@ -1,6 +1,6 @@
 class Parliaments::Parties::MembersController < ApplicationController
 
-    def party_members
+    def index
       parliament_id = params[:parliament_id]
       party_id      = params[:party_id]
 

@@ -1,6 +1,6 @@
 class Parliaments::PartiesController < ApplicationController
 
-  def parties
+  def index
     parliament_id = params[:parliament_id]
 
     @parliament, @parties = RequestHelper.filter_response_data(
@@ -13,7 +13,7 @@ class Parliaments::PartiesController < ApplicationController
     @parties = @parties.multi_direction_sort({ member_count: :desc, name: :asc })
   end
 
-  def party
+  def show
     parliament_id = params[:parliament_id]
     party_id      = params[:party_id]
 

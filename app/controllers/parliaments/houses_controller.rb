@@ -1,6 +1,6 @@
 class Parliaments::HousesController < ApplicationController
 
-  def houses
+  def index
     parliament_id = params[:parliament_id]
 
     @parliament, @houses = RequestHelper.filter_response_data(
@@ -13,7 +13,7 @@ class Parliaments::HousesController < ApplicationController
     @houses     = @houses.sort_by(:name)
   end
 
-  def house
+  def show
     parliament_id = params[:parliament_id]
     house_id      = params[:house_id]
 
