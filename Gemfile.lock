@@ -1,3 +1,9 @@
+PATH
+  remote: ../ParliamentRoutingEngine
+  specs:
+    parliament_routing_engine (0.1.0)
+      rails (~> 5.1.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -293,6 +299,7 @@ DEPENDENCIES
   parliament-grom-decorators (~> 0.2.0)
   parliament-ntriple (~> 0.1)
   parliament-ruby (~> 0.7)
+  parliament_routing_engine!
   pry
   pugin (~> 0.8)
   puma

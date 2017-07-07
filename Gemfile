@@ -6,6 +6,9 @@ gem 'rails', '~> 5.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks', '5.0.1'
 
+gem 'parliament_routing_engine', path: '../ParliamentRoutingEngine/'
+
+
 gem 'json-ld', '~> 2.1'
 gem 'vcard', '~> 0.2'
 
