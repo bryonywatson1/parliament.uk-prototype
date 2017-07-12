@@ -6,9 +6,6 @@ gem 'rails', '~> 5.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks', '5.0.1'
 
-gem 'parliament_routing_engine', path: '../ParliamentRoutingEngine/'
-
-
 gem 'json-ld', '~> 2.1'
 gem 'vcard', '~> 0.2'
 
@@ -20,6 +17,9 @@ gem 'parliament-ntriple', '~> 0.1', require: false
 
 # Parliament Grom Decorators decorates Grom nodes
 gem 'parliament-grom-decorators', '~> 0.2.0'
+
+# Parliament routing
+gem 'parliament-engine', path: '../parliament-engine', require: false
 
 # Converts GeoSparql to GeoJSON
 gem 'geosparql_to_geojson', '~> 0.1'

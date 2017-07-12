@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount ParliamentRoutingEngine::Engine => "/parliament_routing_engine"
+  # Check the parliament-engine gem for routes
 end
